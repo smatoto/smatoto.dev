@@ -16,7 +16,7 @@ ISSUER_SHORT_LABELS = {
 
 VALID_ISSUER_BADGE_CLASSES = {"google", "aws", "okta", "hashicorp"}
 
-REQUIRED_CERT_KEYS = {"issuer", "title", "issued_month_year", "expires_date", "expires_full", "badge_url", "issuer_badge_class"}
+REQUIRED_CERT_KEYS = {"issuer", "title", "issued_month_year", "expires_date", "badge_url", "issuer_badge_class"}
 
 def validate_url(url, cert_idx):
     """Validate that URL is a string and uses http or https scheme."""
@@ -99,13 +99,17 @@ def generate_certifications_page():
         content += '<div class="certs-grid">\n'
 
         for cert in certs:
+            # Generate human-readable expiry date from ISO format (without leading zero on day)
+            expires_iso = date.fromisoformat(cert["expires_date"])
+            expires_full = f"{expires_iso.day} {expires_iso.strftime('%B %Y')}"
+
             # HTML-escape all user-controlled values
             escaped_badge_url = html.escape(cert["badge_url"], quote=True)
             escaped_title = html.escape(cert["title"], quote=True)
             escaped_expires = html.escape(cert["expires_date"], quote=True)
             escaped_class = html.escape(cert["issuer_badge_class"], quote=True)
             escaped_issued = html.escape(cert["issued_month_year"], quote=True)
-            escaped_expires_full = html.escape(cert["expires_full"], quote=True)
+            escaped_expires_full = html.escape(expires_full, quote=True)
 
             content += f'  <a href="{escaped_badge_url}" class="cert-card" data-expires="{escaped_expires}" target="_blank" rel="noopener noreferrer">\n'
             content += f'    <span class="issuer-badge issuer-compact {escaped_class}" title="{escaped_issuer}" aria-label="{escaped_issuer}">{escaped_short_label}</span>\n'
