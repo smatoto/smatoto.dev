@@ -4,6 +4,7 @@
 import json
 import html
 import sys
+from datetime import date
 from pathlib import Path
 
 ISSUER_SHORT_LABELS = {
@@ -25,17 +26,13 @@ def validate_url(url, cert_idx):
         raise ValueError(f"Certification #{cert_idx} has invalid badge_url: must use http or https, got {url}")
 
 def validate_iso_date(date_str, cert_idx, field_name):
-    """Validate that date is in ISO-8601 format (YYYY-MM-DD)."""
+    """Validate that date is a valid ISO-8601 date (YYYY-MM-DD)."""
     if not isinstance(date_str, str):
         raise ValueError(f"Certification #{cert_idx} has invalid {field_name}: must be a string, got {type(date_str).__name__}")
-    if not len(date_str) == 10 or date_str[4] != '-' or date_str[7] != '-':
-        raise ValueError(f"Certification #{cert_idx} has invalid {field_name} format: expected YYYY-MM-DD, got {date_str}")
     try:
-        int(date_str[:4])
-        int(date_str[5:7])
-        int(date_str[8:10])
+        date.fromisoformat(date_str)
     except ValueError:
-        raise ValueError(f"Certification #{cert_idx} has invalid {field_name} format: dates must be numeric, got {date_str}")
+        raise ValueError(f"Certification #{cert_idx} has invalid {field_name} format: expected valid ISO-8601 date (YYYY-MM-DD), got {date_str}")
 
 def generate_certifications_page():
     # Read JSON data
@@ -48,13 +45,29 @@ def generate_certifications_page():
     except FileNotFoundError:
         raise ValueError(f"Certifications data file not found: {json_path}")
 
+    # Validate data structure
+    if not isinstance(data, dict):
+        raise ValueError(
+            f"Invalid certifications data in {json_path}: top-level JSON value must be an object, got {type(data).__name__}"
+        )
+
+    certifications = data.get("certifications", [])
+    if not isinstance(certifications, list):
+        raise ValueError(
+            f"Invalid certifications data in {json_path}: 'certifications' must be a list, got {type(certifications).__name__}"
+        )
+
     # Group certifications by issuer (maintain order)
     issuers = {}
-    for idx, cert in enumerate(data.get("certifications", [])):
+    for idx, cert in enumerate(certifications):
+        if not isinstance(cert, dict):
+            raise ValueError(f"Certification #{idx} must be an object, got {type(cert).__name__}")
         # Validate required keys
         missing_keys = REQUIRED_CERT_KEYS - set(cert.keys())
         if missing_keys:
-            raise ValueError(f"Certification #{idx} missing required fields: {missing_keys}")
+            raise ValueError(
+                f"Certification #{idx} missing required fields: {', '.join(sorted(missing_keys))}"
+            )
 
         # Validate URL scheme
         validate_url(cert["badge_url"], idx)
