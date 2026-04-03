@@ -2,8 +2,8 @@ site_name: smatoto.dev
 site_description: Personal Developer Blog of Sermil Matoto
 site_url: https://smatoto.dev/
 site_author: Sermil Matoto
-repo_url: https://github.com/smatoto/smatoto.github.io
-repo_name: smatoto/smatoto.github.io
+repo_url: https://github.com/smatoto/smatoto.dev
+repo_name: smatoto/smatoto.dev
 
 theme:
   name: material
