@@ -21,5 +21,7 @@ jobs:
           python-version: '3.x'
       - name: Install MkDocs Material
         run: pip install mkdocs-material
+      - name: Generate certifications page from JSON
+        run: python scripts/generate_certifications.py
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
