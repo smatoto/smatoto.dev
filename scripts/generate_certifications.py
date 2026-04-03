@@ -51,7 +51,11 @@ def generate_certifications_page():
             f"Invalid certifications data in {json_path}: top-level JSON value must be an object, got {type(data).__name__}"
         )
 
-    certifications = data.get("certifications", [])
+    if "certifications" not in data:
+        raise ValueError(
+            f"Invalid certifications data in {json_path}: 'certifications' key is required"
+        )
+    certifications = data["certifications"]
     if not isinstance(certifications, list):
         raise ValueError(
             f"Invalid certifications data in {json_path}: 'certifications' must be a list, got {type(certifications).__name__}"
