@@ -49,6 +49,8 @@ extra:
       link: https://github.com/smatoto
     - icon: fontawesome/brands/google
       link: https://developers.google.com/community/experts
+    - icon: simple/credly
+      link: https://www.credly.com/users/smatoto/badges#credly
 
 nav:
   - Home: index.md
