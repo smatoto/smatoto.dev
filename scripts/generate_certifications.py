@@ -3,6 +3,8 @@
 
 import json
 import html
+import sys
+import re
 from pathlib import Path
 
 ISSUER_SHORT_LABELS = {
@@ -11,6 +13,8 @@ ISSUER_SHORT_LABELS = {
     "Okta": "Okta",
     "HashiCorp": "HCP"
 }
+
+VALID_ISSUER_BADGE_CLASSES = {"google", "aws", "okta", "hashicorp"}
 
 REQUIRED_CERT_KEYS = {"issuer", "title", "issued_month_year", "expires_date", "expires_full", "badge_url", "issuer_badge_class"}
 
@@ -43,6 +47,11 @@ def generate_certifications_page():
         if not validate_url(cert["badge_url"]):
             raise ValueError(f"Certification #{idx} has invalid badge_url (must be http/https): {cert['badge_url']}")
 
+        # Validate issuer_badge_class against allowlist
+        badge_class = cert["issuer_badge_class"]
+        if badge_class not in VALID_ISSUER_BADGE_CLASSES:
+            raise ValueError(f"Certification #{idx} has invalid issuer_badge_class '{badge_class}'. Must be one of: {', '.join(sorted(VALID_ISSUER_BADGE_CLASSES))}")
+
         issuer = cert["issuer"]
         if issuer not in issuers:
             issuers[issuer] = []
@@ -70,8 +79,8 @@ def generate_certifications_page():
             escaped_issued = html.escape(cert["issued_month_year"], quote=True)
             escaped_expires_full = html.escape(cert["expires_full"], quote=True)
 
-            content += f'  <a href="{escaped_badge_url}" class="cert-card" data-expires="{escaped_expires}" target="_blank" rel="noopener">\n'
-            content += f'    <span class="issuer-badge issuer-compact {escaped_class}" title="{escaped_issuer}">{escaped_short_label}</span>\n'
+            content += f'  <a href="{escaped_badge_url}" class="cert-card" data-expires="{escaped_expires}" target="_blank" rel="noopener noreferrer">\n'
+            content += f'    <span class="issuer-badge issuer-compact {escaped_class}" title="{escaped_issuer}" aria-label="{escaped_issuer}">{escaped_short_label}</span>\n'
             content += f'    <h3>{escaped_title}</h3>\n'
             content += f'    <span class="cert-date">Issued: {escaped_issued} | Expires: {escaped_expires_full}</span>\n'
             content += "  </a>\n\n"
@@ -97,5 +106,5 @@ if __name__ == "__main__":
 
         print(f"Generated {cert_path}")
     except ValueError as e:
-        print(f"Error: {e}", file=__import__("sys").stderr)
-        exit(1)
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
