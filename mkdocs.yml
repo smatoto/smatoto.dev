@@ -1,0 +1,79 @@
+site_name: smatoto.dev
+site_description: Personal Developer Blog of Sermil Matoto
+site_url: https://smatoto.dev/
+site_author: Sermil Matoto
+repo_url: https://github.com/smatoto/smatoto.github.io
+repo_name: smatoto/smatoto.github.io
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Google Sans
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+    - content.tooltips
+  icon:
+    logo: material/code-tags
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/extra.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/smatoto
+    - icon: fontawesome/brands/github
+      link: https://github.com/smatoto
+    - icon: fontawesome/brands/google
+      link: https://developers.google.com/community/experts
+
+nav:
+  - Home: index.md
+  - Certifications: certifications.md
+  - Sessions:
+      - 2026:
+          - 2026/beyond-the-code.md
+      - 2025:
+          - 2025/coding-with-jules.md
+          - 2025/containers-and-cicd.md
+          - 2025/scaling-heights-saas.md
+          - 2025/intro-to-gemini-api.md
+          - 2025/adk-and-gemini.md
+          - 2025/intro-to-gemini-cli.md
+          - 2025/mcp-server-on-cloud-run.md
+      - 2024:
+          - 2024/functions-on-the-run.md
+      - 2023:
+          - 2023/securing-ci-cd-pipelines.md
+          - 2023/application-integration.md
+          - 2023/building-quickly-in-google-cloud.md
+  - Categories: categories.md
+
+plugins:
+  - search
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/smatoto"  target="_blank" rel="noopener">Sermil Matoto</a>
