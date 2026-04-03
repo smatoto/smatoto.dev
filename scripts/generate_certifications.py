@@ -4,7 +4,6 @@
 import json
 import html
 import sys
-import re
 from pathlib import Path
 
 ISSUER_SHORT_LABELS = {
@@ -18,11 +17,25 @@ VALID_ISSUER_BADGE_CLASSES = {"google", "aws", "okta", "hashicorp"}
 
 REQUIRED_CERT_KEYS = {"issuer", "title", "issued_month_year", "expires_date", "expires_full", "badge_url", "issuer_badge_class"}
 
-def validate_url(url):
+def validate_url(url, cert_idx):
     """Validate that URL is a string and uses http or https scheme."""
     if not isinstance(url, str):
-        raise ValueError(f"badge_url must be a string, got {type(url).__name__}")
-    return url.startswith(("http://", "https://"))
+        raise ValueError(f"Certification #{cert_idx} has invalid badge_url: must be a string, got {type(url).__name__}")
+    if not url.startswith(("http://", "https://")):
+        raise ValueError(f"Certification #{cert_idx} has invalid badge_url: must use http or https, got {url}")
+
+def validate_iso_date(date_str, cert_idx, field_name):
+    """Validate that date is in ISO-8601 format (YYYY-MM-DD)."""
+    if not isinstance(date_str, str):
+        raise ValueError(f"Certification #{cert_idx} has invalid {field_name}: must be a string, got {type(date_str).__name__}")
+    if not len(date_str) == 10 or date_str[4] != '-' or date_str[7] != '-':
+        raise ValueError(f"Certification #{cert_idx} has invalid {field_name} format: expected YYYY-MM-DD, got {date_str}")
+    try:
+        int(date_str[:4])
+        int(date_str[5:7])
+        int(date_str[8:10])
+    except ValueError:
+        raise ValueError(f"Certification #{cert_idx} has invalid {field_name} format: dates must be numeric, got {date_str}")
 
 def generate_certifications_page():
     # Read JSON data
@@ -44,8 +57,10 @@ def generate_certifications_page():
             raise ValueError(f"Certification #{idx} missing required fields: {missing_keys}")
 
         # Validate URL scheme
-        if not validate_url(cert["badge_url"]):
-            raise ValueError(f"Certification #{idx} has invalid badge_url (must be http/https): {cert['badge_url']}")
+        validate_url(cert["badge_url"], idx)
+
+        # Validate date format
+        validate_iso_date(cert["expires_date"], idx, "expires_date")
 
         # Validate issuer_badge_class against allowlist
         badge_class = cert["issuer_badge_class"]
@@ -105,6 +120,6 @@ if __name__ == "__main__":
             f.write(content)
 
         print(f"Generated {cert_path}")
-    except ValueError as e:
+    except (ValueError, KeyError, TypeError, OSError) as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
