@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-cloud-manila-presents-gdg-cloud-manila-build-with-ai-2025/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/12x8qmsbIq28dFAC_i8W80blO-uaYJ0axBpXSVlYf2dc/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vTYAn48ZuSLm0AfLNRVnEe6JwXzPXHXfo9ySBT9oz8NLLD5ZON4XtBdAS10yHpsmsTmNCfG_k7R1X5m/pub?start=false&loop=false&delayms=3000"
   - name: "Build with AI Zamboanga 2025"
     organizer: "GDG Zamboanga"
     date: 2025-04-25
@@ -33,7 +33,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-zamboanga-presents-build-with-ai-zamboanga/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1zc9B1MqSiz4dp7e_Stc8_UD9GxbNqP9Gw1079whsdJU/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRZ1Nfg89AUZGKriGnCGsXCvpFxWQ27w9MsQpZ-jO0dBWKOfzwd00fY58As6mjcKGORcJrlzQb_W6D-/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -48,7 +48,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/W1%20-%20Gemini%20API/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/intro-to-gemini-api/"
 ---
 
 ## Abstract

@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-on-campus-polytechnic-university-of-the-philippines-manila-philippines-presents-cosmos-2026-exploring-infinite-possibilities-through-technology-and-innovation/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1xSx0iWyr8dKSeviCD619LJwVn5fBtTdezZrVZKowVBU/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vTLpTP7-AdzSlAcRwQn6EL-NnzxSgS8nFknFVL4VsSPhbBEgYk8QuMo4UDib4uwZdzEdtvRankuQbmL/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2026/T8%20-%20Beyond%20the%20Code/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2026/beyond-the-code/"
 ---
 
 ## Abstract

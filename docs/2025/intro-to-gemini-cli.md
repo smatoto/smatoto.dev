@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-manila-presents-devfest-manila-2025/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1I4zeitbsiOf0aHJGM3LBnl-LRYbD5xsLxZi1e1EQlpU/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRTSw0C1rrgecPtvwa-LMYfpQv23HxQeRG2OtBzc8F5008kg85_RVgJ7OGbf9HuYW1Yn9YekXTQlcJo/pub?start=false&loop=false&delayms=3000"
   - name: "DevFest Cebu 2025"
     organizer: "GDG Cebu"
     date: 2025-11-30
@@ -33,7 +33,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-cebu-presents-devfest-cebu-2025/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1DBLWxrMucknxzM6LLGOK8cRIC38oMIDs7bM48BZpl4U/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vTnYaqtHLYAKqcUyjKav85Pwx95b7O7WYgeyyh7HRKbEtdER8g7xvEpsuJl2QNPReh6c0fIqEsYqvHP/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -48,7 +48,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/W3%20-%20Gemini%20CLI/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/intro-to-gemini-cli/"
 ---
 
 ## Abstract

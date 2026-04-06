@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-on-campus-pamantasan-ng-lungsod-ng-maynila-manila-philippines-presents-saasified-and-amplified-ascending-software-to-the-sky/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1StVhkwVS0SKUC0auzflSO5XkNxHmbhyKtFddKwxcnDk/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vS-GX5qfL83do9XauXW48wyJa7axEIJ93rkFvfWd5GxJD5J3TySq0BvLN0kvyOuSh-c7eSg85k7Z7yy/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/T7%20-%20Scaling%20Heights%20SaaS/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/scaling-heights-saas/"
 ---
 
 ## Abstract
