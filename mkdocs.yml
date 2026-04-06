@@ -58,6 +58,7 @@ nav:
   - Sessions:
       - 2026:
           - 2026/beyond-the-code.md
+          - 2026/beyond-monolithic-prompts.md
       - 2025:
           - 2025/coding-with-jules.md
           - 2025/containers-and-cicd.md
@@ -72,6 +73,9 @@ nav:
           - 2023/securing-ci-cd-pipelines.md
           - 2023/application-integration.md
           - 2023/building-quickly-in-google-cloud.md
+  - Codelabs:
+      - codelabs/index.md
+      - codelabs/adk-agent-skills.md
   - Categories: categories.md
 
 plugins:
