@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-cloud-manila-presents-devfest-cloud-manila-2023/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1JCJ1V5K7hL9SzqOqK7pJPSAYhtI_tMLY_EcIpdVImFk/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRXSk4j1R4yJgTL9QuqL4ZRCjSD8azLpoY8EWfhnOhfFpcrjacWwnxsEkJgRdqy-2EECnEkU7S2mm-s/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2023/T3%20-%20Building%20quickly%20in%20Google%20Cloud/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2023/building-quickly-in-google-cloud/"
 ---
 
 ## Abstract

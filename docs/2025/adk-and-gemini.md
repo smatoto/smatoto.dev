@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-bacolod-presents-google-io-extended-2025-bacolod/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/14k3SEyEOiTmrcy7xXoPdCar9ettMrilGD59CaQGrOpE/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vSvEmcIHD2JXktvUokLxQ_5sIFRdd7DiTkC1kjhh7s2ONMx2iOmLuj2qPqCqurvBnhHE_Ni04wf3uJw/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/W2%20-%20ADK%20and%20Gemini/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/adk-and-gemini/"
 ---
 
 ## Abstract

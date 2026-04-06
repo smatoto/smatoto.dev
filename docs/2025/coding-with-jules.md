@@ -22,7 +22,7 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-manila-presents-google-io-extended-manila-2025/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1k7aEHH0TqUeb3x0t21ATf-eNEBQwFEqZm5HyKd8NvBU/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vQ98JmoNfHq67BlwxbQzAue8iiuB1TjQj-jwLOrKPdTryrCaeNqWyC1k-t90OpsU83iNHLZSc6n8XUI/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/T5%20-%20Jules/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/coding-with-jules/"
 ---
 
 ## Abstract

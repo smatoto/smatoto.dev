@@ -22,16 +22,22 @@ events:
       link: "https://gdg.community.dev/events/details/google-gdg-bacolod-presents-devfest-bacolod-2025-1/"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1hz8ma7T_twakKyAyQa3IVY_enIekBeZ7cvu2oE5YVp0/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vSTUueUaymgzATs5gU9SU4s0joXZ00sVtnM1-JxnzfPWEVFl1lBvs-4-Xv-NcaJXOLDwNACwyWKS_mQ/pub?start=false&loop=false&delayms=3000"
 
-    # Links for the Portfolio Site
-    resources:
-    github: "https://github.com/smatoto/mcp-server-cloud-run"
-    blog: ""
-    recording: ""
+# Links for the Portfolio Site
+resources:
+  github:
+    name: "GitHub Repository"
+    link: "https://github.com/smatoto/mcp-server-cloud-run"
+  blog:
+    name: "Blog Post"
+    link: ""
+  recording:
+    name: "Session Recording"
+    link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/W4%20-%20MCP%20Server%20on%20Cloud%20Run/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/mcp-server-on-cloud-run/"
 ---
 
 ## Abstract

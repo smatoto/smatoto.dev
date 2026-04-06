@@ -22,7 +22,7 @@ events:
       link: "https://csexpo2025.tech"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/13EKeblrVUMC0mHHFmEalZkn5OGOqdkQGAkMyrjbohcA/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRERVLaMAAFd7V6DJXk1PTukndF3mi0nRLCfnn9JdeqjM7188hddK3SCW3Ss5_GBBYSMbJsgd-jFqF3/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2025/T6%20-%20Containers%20and%20CICD/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2025/containers-and-cicd/"
 ---
 
 ## Abstract

@@ -22,7 +22,7 @@ events:
       link: "https://luma.com/hiversconnectmnl?tk=n6YjkH"
     slides:
       name: "Slide Deck"
-      link: "https://docs.google.com/presentation/d/1iBMmqafxQ6aMJSCUKuKrjQP8Pxu284UodlWSmW6gT2Q/edit?usp=sharing"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRV0M9n1r37UrcVwNrNKLPiqpmbDXK9SwStA69SEV4fE5gJjR-I0ziZj0-F2Bx11Lv0qZn8TsDB-nZS/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
@@ -37,7 +37,7 @@ resources:
     link: ""
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/2023/T1%20-%20Securing%20CI%20CD%20Pipelines/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/2023/securing-ci-cd-pipelines/"
 ---
 
 ## Abstract
