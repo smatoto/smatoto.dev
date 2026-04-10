@@ -8,7 +8,7 @@ status: Delivered
 level: Beginner
 duration: 30
 language: English
-tags: ["career","systems-thinking","12-factor","security","scalability","certifications","portfolio","continuous-learning","best-practices","mentorship"]
+tags: [ "AI", "AI - Agents", "AI - Gemini", "Cloud - App Development", "Cloud - Serverless & Containers", "Google Cloud"]
 
 # Event history for Impact Analytics
 events:
