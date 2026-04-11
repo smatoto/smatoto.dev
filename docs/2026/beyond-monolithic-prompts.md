@@ -53,7 +53,7 @@ As AI agents take on more tasks, developers often rely on massive, token-heavy s
   - Key terminologies: tokens, context window, attention
   - The U-shaped attention curve and the "lost in the middle" problem
   - Context rot: how large contexts degrade performance and raise costs
-  - TLDL: short context good, long context bad
+  - TLDL (Too Long Didn't Listen): short context good, long context bad
 
 - **The Solution: Progressive Disclosure**
   - Progressive disclosure as an information architecture pattern
@@ -61,7 +61,7 @@ As AI agents take on more tasks, developers often rely on massive, token-heavy s
   - Three-tier architecture: L1 Metadata, L2 Instructions, L3 Resources
   - Structure of a SKILL.md file: YAML frontmatter + Markdown body
   - Bundling additional content via references/ and assets/
-  - Token impact: 20 skills = ~20,000 tokens (monolithic) vs. ~1,000 tokens (L1 only)
+  - Token impact (approximate; varies by model and skill content): 20 skills = ~20,000 tokens (monolithic) vs. ~1,000 tokens (L1 only)
   - How skills integrate with the agent's context window
 
 - **Implementation: Skill Patterns with SkillToolset**
@@ -87,13 +87,13 @@ As AI agents take on more tasks, developers often rely on massive, token-heavy s
 
 ## Key Takeaways
 
-- TLDL: short context = better quality, lower cost, faster responses
+- TLDL (Too Long Didn't Listen): short context = better quality, lower cost, faster responses
 - Progressive disclosure loads knowledge in layers — L1 metadata always, L2 instructions on demand, L3 resources only when needed
-- 20 skills with progressive disclosure uses ~1,000 tokens vs. ~20,000 tokens with monolithic prompts
+- 20 skills with progressive disclosure use ~1,000 tokens vs. ~20,000 tokens with monolithic prompts (approximate; varies by model and skill content)
 - SKILL.md structure: YAML frontmatter (name + description) for routing, Markdown body for instructions, `references/` for deep resources
 - SkillToolset automatically generates three tools that implement progressive disclosure: `list_skills`, `load_skill`, `load_skill_resource`
 - Four skill patterns for different needs: Inline (quick), File-Based (production), External (community), Meta (self-extending)
-- Skills follow the agentskills.io spec — portable across ADK, Gemini CLI, Claude Code, and any compatible agent
+- Skills follow the agentskills.io spec — portable across any compatible agent or toolchain that supports the specification
 
 ## References
 
