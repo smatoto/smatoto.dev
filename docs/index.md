@@ -1,8 +1,8 @@
 ## About Me
 
-Hi, I'm **Sermil Matoto**: a Google Developer Expert (GDE) for Cloud, Chief Engineer at [Kollab](https://kollab.com), and active contributor to the tech community through public talks and hands-on workshops.
+Hi, I'm **Sermil Matoto**: a Google Developer Expert (GDE) for Cloud and active contributor to the tech community through public talks and hands-on workshops.
 
-I speak on topics spanning **Cloud Computing**, **App Development**, **DevOps** and **Artificial Intelligence**, with a strong focus on Google Cloud technologies. I deliver sessions at GDG events, Google-run programs like Build with AI, DevFests, and other community-driven conferences across the Philippines and beyond.
+I speak on topics spanning **Cloud Computing**, **App Development**, **DevOps** and **Artificial Intelligence**, with a strong focus on Google Cloud technologies. I deliver sessions at GDG events, Google-run programs like Build with AI, DevFests, and other community-driven conferences across the Philippines.
 
 I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, demonstrating deep expertise across cloud platforms and infrastructure technologies. [View all certifications](certifications.md)
 
@@ -30,11 +30,11 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
 ## Featured Sessions
 
 <div class="featured-grid">
-  <a href="./2026/beyond-the-code/" class="session-card">
-    <span class="category-badge app-dev">App Dev</span>
-    <h3>Beyond the Code</h3>
-    <span class="event-name">Cosmos 2026</span>
-    <div class="attendees">150 attendees</div>
+  <a href="./2026/skills-for-adk-agents/" class="session-card">
+    <span class="category-badge ai">AI</span>
+    <h3>Skills for ADK Agents</h3>
+    <span class="event-name">Build with AI Manila 2026</span>
+    <div class="attendees">80 attendees</div>
   </a>
 
   <a href="./2025/intro-to-gemini-cli/" class="session-card">

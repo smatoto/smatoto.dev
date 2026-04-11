@@ -180,10 +180,10 @@
             {% endfor %}
         </tbody>
     </table>
-    {% endif %} {# Resources #} {% if page.meta.resources %} {% set
-    has_resources = false %} {% for key, res in page.meta.resources.items() %}
-    {% if res and res.link %}{% set has_resources = true %}{% endif %} {% endfor
-    %} {% if has_resources %}
+    {% endif %} {# Resources #} {% if page.meta.resources %} {% set ns =
+    namespace(has_resources=false) %} {% for key, res in
+    page.meta.resources.items() %} {% if res and res.link %}{% set
+    ns.has_resources = true %}{% endif %} {% endfor %} {% if ns.has_resources %}
     <h2>Resources</h2>
     <div
         style="

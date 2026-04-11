@@ -1,8 +1,24 @@
+---
+id: CL1
+title: "Build a Skill-Powered ADK Agent"
+summary: "A hands-on codelab where you build a blog-writing AI agent using Google ADK's SkillToolset and the progressive disclosure pattern — implementing all four skill patterns from simple inline definitions to a self-extending meta skill that generates new skills on demand."
+level: Intermediate
+duration: "30-60"
+language: English
+tags: ["AI - Agent Development Kit (ADK)", "AI - Agents", "AI - Gemini", "Google Cloud", "Build with AI"]
+
+# Sessions where this codelab is used
+sessions:
+  - id: W5
+    title: "Skills for ADK Agents: Optimizing Context with Progressive Disclosure"
+    path: "2026/skills-for-adk-agents"
+---
+
 # Build a Skill-Powered ADK Agent
 
 ## Overview
 
-**Duration:** 60-90 minutes | **Level:** Intermediate
+**Duration:** 30-60 minutes | **Level:** Intermediate
 
 In this codelab, you'll build an AI agent using Google's **Agent Development Kit (ADK)** that uses **skills** — reusable, on-demand knowledge modules — instead of cramming everything into a monolithic system prompt. By the end, your agent will dynamically load domain expertise only when it needs it, cutting baseline context usage by up to 90%.
 
@@ -498,7 +514,7 @@ This is where it gets powerful. A **meta skill** teaches the agent how to create
 
 Add this below the external skill:
 
-```python
+````python
 # ---------------------------------------------------------------------------
 # Pattern 4: Meta Skill — a skill that creates new skills
 # Best for: self-extending agents that generate new capabilities on demand
@@ -582,7 +598,7 @@ skill_creator = models.Skill(
         }
     ),
 )
-```
+````
 
 **Key points:**
 - The `resources` field provides **L3 references** — the spec and an example
