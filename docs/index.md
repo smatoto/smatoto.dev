@@ -16,7 +16,7 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
     <div class="stat-label">Sessions</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">1,554+</div>
+    <div class="stat-number">1,634+</div>
     <div class="stat-label">Developers Reached</div>
   </div>
   <div class="stat-card">
