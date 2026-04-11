@@ -12,7 +12,7 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
 
 <div class="stats-row">
   <div class="stat-card">
-    <div class="stat-number">12</div>
+    <div class="stat-number">13</div>
     <div class="stat-label">Sessions</div>
   </div>
   <div class="stat-card">
