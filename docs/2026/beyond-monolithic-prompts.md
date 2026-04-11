@@ -8,9 +8,9 @@ status: Upcoming # Draft, Upcoming, or Delivered
 level: Intermediate
 duration: 45
 language: English
-tags: ["AI - Agent Development Kit (ADK)","AI - Agents","AI - Gemini","Google Cloud","Buid with AI"]
+tags: ["AI - Agent Development Kit (ADK)","AI - Agents","AI - Gemini","Google Cloud","Build with AI"]
 
-# Delivery history for Impact Analytics
+# Event history for Impact Analytics
 events:
   - name: "Build with AI Manila 2026: Beyond the Prompt"
     organizer: "GDG Manila"
