@@ -58,7 +58,7 @@ nav:
   - Sessions:
       - 2026:
           - 2026/beyond-the-code.md
-          - 2026/beyond-monolithic-prompts.md
+          - 2026/skills-for-adk-agents.md
       - 2025:
           - 2025/coding-with-jules.md
           - 2025/containers-and-cicd.md
