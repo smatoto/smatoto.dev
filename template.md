@@ -10,9 +10,9 @@ duration: 0
 language: English
 tags: ["google-cloud", "gde", "google-developer-expert"]
 
-# Delivery history for Impact Analytics
-deliveries:
-  - event: "<Event Name>"
+# Event history for Impact Analytics
+events:
+  - name: "<Event Name>"
     organizer: "<Organizer>"
     date: YYYY-MM-DD
     location: "<Location>"
@@ -37,7 +37,7 @@ resources:
     link: "https://youtube.com/..."
 
 # Dynamic QR code (construct based on path)
-qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.github.io/content-hub/<year>/<filename-without-ext>/"
+qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://smatoto.dev/<year>/<filename-without-ext>/"
 ---
 
 ## Abstract
