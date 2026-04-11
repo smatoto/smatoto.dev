@@ -42,57 +42,64 @@ qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://
 
 ## Abstract
 
-As AI agents take on more tasks, developers often rely on massive, token-heavy system prompts to provide domain knowledge. This session presents a highly efficient alternative using the ADK SkillToolset. By breaking knowledge down into L1 metadata, L2 instructions, and L3 resources, we can implement progressive disclosure to drastically reduce token consumption. We will walk through building inline, file-based, and external skills, culminating in a demonstration of a fully optimized agent that pulls in community-driven expertise exactly when a task requires it.
+As AI agents take on more tasks, developers often rely on massive, token-heavy system prompts to provide domain knowledge. This session presents a highly efficient alternative using the ADK SkillToolset. By breaking knowledge down into L1 metadata, L2 instructions, and L3 resources, we can implement progressive disclosure to drastically reduce token consumption. We will walk through building inline, file-based, external, and meta skills, culminating in a hands-on codelab where attendees build a fully optimized agent that pulls in expertise exactly when a task requires it.
 
 ## Outline
 
 - **The Problem: Monolithic Prompts**
-    - Token explosion: loading all knowledge upfront into massive system prompts
-    - Context window limitations: real-world constraints vs. theoretical models
-    - Cost implications: token consumption directly impacts API costs
-    - Why context engineering matters for scalable agent development
+  - What AI agents are and how they work (model + tools)
+  - How developers reach for monolithic system prompts as agents grow
+  - Prompt engineering vs. context engineering: why the distinction matters
+  - Key terminologies: tokens, context window, attention
+  - The U-shaped attention curve and the "lost in the middle" problem
+  - Context rot: how large contexts degrade performance and raise costs
+  - TLDL (Too Long Didn't Listen): short context good, long context bad
 
-- **Progressive Disclosure: The Solution**
-    - Three-tier architecture: L1 Metadata, L2 Instructions, L3 Resources
-    - How progressive disclosure reduces token consumption by ~90%
-    - Why modular knowledge matters for agent scalability
-    - The "lost in the middle" problem and how progressive disclosure mitigates it
+- **The Solution: Progressive Disclosure**
+  - Progressive disclosure as an information architecture pattern
+  - Static context (traditional) vs. skill approach (progressive disclosure)
+  - Three-tier architecture: L1 Metadata, L2 Instructions, L3 Resources
+  - Structure of a SKILL.md file: YAML frontmatter + Markdown body
+  - Bundling additional content via references/ and assets/
+  - Token impact (approximate; varies by model and skill content): 20 skills = ~20,000 tokens (monolithic) vs. ~1,000 tokens (L1 only)
+  - How skills integrate with the agent's context window
 
-- **Skill Patterns: From Basic to Advanced**
-    - **Inline Skills** — Hardcoded Python objects for simple, stable rules
-    - **File-Based Skills** — Directory structure with SKILL.md and references for reusability
-    - **External Skills** — Community-sourced skills via agentskills.io specification
-    - **Skill Factory** — Self-extending agents that generate capabilities at runtime
-    - When to use each pattern: prototyping vs. production vs. ecosystem
+- **Implementation: Skill Patterns with SkillToolset**
+  - Agent Development Kit (ADK): build fast, multimodal, open, scalable
+  - Four skill patterns: Inline, File-Based, External, Meta
+  - Project structure: `app/skills/<skill-name>/SKILL.md` + `references/`
+  - Pattern 1 — Inline Skills: `models.Skill()` hardcoded in `agent.py`
+  - Pattern 2 — File-Based Skills: `load_skill_from_dir()` from directory
+  - Pattern 3 — External Skills: community-sourced, cloned from repos
+  - Pattern 4 — Meta Skills: skills that generate new SKILL.md files at runtime
+  - SkillToolset wiring: auto-generates `list_skills`, `load_skill`, `load_skill_resource` tools
+  - How skills become tools: L1 auto-injected, L2 and L3 loaded on demand
 
-- **Building & Demonstrating Optimized Agents**
-    - Repository structure and SKILL.md anatomy
-    - Semantic routing: how agents discover and activate skills
-    - Live demonstration: executing a real task with progressive disclosure
-    - Token metrics and efficiency gains in practice
-    - Best practices: semantic descriptions, scoped instructions, static vs. dynamic separation
+- **Demo: Building Optimized Agents**
+  - Hands-on codelab: Build a Skill-Powered ADK Agent
+  - Requirements: Python 3.10+, Google AI API key, terminal and text editor
+  - Building an agent that uses skills instead of a monolithic system prompt
 
-- **Closing: Building Your Own Optimized System**
-    - How to evaluate your current agent architecture
-    - Roadmap for migrating from monolithic to progressive disclosure
-    - Resources for implementing skills and SkillToolset patterns
-    - Next steps: Antigravity codelabs and advanced patterns
+- **Closing: Building Your Own Optimized Agents**
+  - References and further reading
+  - Google Skills learning platform
+  - Community resources and next steps
 
 ## Key Takeaways
 
-- Monolithic prompts are inefficient — progressive disclosure reduces token consumption by ~90%
-- ADK SkillToolset provides a standardized approach to modular agent knowledge architecture
-- Start with inline skills for prototyping, then evolve to file-based and external skills for production
-- The three-tier structure (L1 metadata, L2 instructions, L3 resources) enables efficient context window management
-- Self-extending agents (Skill Factory pattern) represent the future of scalable AI systems
+- TLDL (Too Long Didn't Listen): short context = better quality, lower cost, faster responses
+- Progressive disclosure loads knowledge in layers — L1 metadata always, L2 instructions on demand, L3 resources only when needed
+- 20 skills with progressive disclosure use ~1,000 tokens vs. ~20,000 tokens with monolithic prompts (approximate; varies by model and skill content)
+- SKILL.md structure: YAML frontmatter (name + description) for routing, Markdown body for instructions, `references/` for deep resources
+- SkillToolset automatically generates three tools that implement progressive disclosure: `list_skills`, `load_skill`, `load_skill_resource`
+- Four skill patterns for different needs: Inline (quick), File-Based (production), External (community), Meta (self-extending)
+- Skills follow the agentskills.io spec — portable across any compatible agent or toolchain that supports the specification
 
 ## References
 
-- [Developers Guide to Building ADK Agents with Skills](https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/)
+- [Developer's Guide to Building ADK Agents with Skills](https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/)
+- [ADK Agent Skills: Progressive Disclosure with SkillToolset](https://lavinigam.com/posts/adk-agent-skills-part1/)
 - [Skills for ADK Agents](https://adk.dev/skills/)
 - [AgentSkills Specification](https://agentskills.io/specification)
-- [ADK Samples](https://github.com/google/adk-samples)
-- [Agent Skills Tutorial](https://github.com/google/adk-samples/tree/main/python/agents/agent-skills-tutorial)
-- [ADK Agent Skills: Progressive Disclosure with SkillToolset](https://lavinigam.com/posts/adk-agent-skills-part1/)
-- [Guide to Context Engineering](https://blog.bytebytego.com/p/a-guide-to-context-engineering-for)
+- [Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
 - [Lost in the Middle: How Language Models Use Long Contexts](https://cs.stanford.edu/~nfliu/papers/lost-in-the-middle.arxiv2023.pdf)
