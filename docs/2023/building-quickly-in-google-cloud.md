@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 40
 language: English
-tags: ["app-dev","jump-start-solutions","terraform","iac","architecture","productivity","best-practices","cloud-native","devops","rapid-development"]
+tags: ["Cloud - App Development", "Google Cloud", "DevFest"]
 
 # Event history for Impact Analytics
 events:

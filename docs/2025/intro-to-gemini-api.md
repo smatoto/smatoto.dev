@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 40
 language: English
-tags: ["gemini","gemini-2.0","vertex-ai","generative-ai","rest-api","curl","llm","multimodal","function-calling","api"]
+tags: ["AI - Vertex AI", "AI - Gemini", "Build with AI"]
 
 # Event history for Impact Analytics
 events:

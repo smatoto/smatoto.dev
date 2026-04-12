@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 45
 language: English
-tags: ["adk","agent-development-kit","ai-agents","agentic-ai","gemini","vertex-ai","vertex-ai-agent-engine","multi-agent","function-calling","generative-ai"]
+tags: ["AI - Agent Development Kit (ADK)", "AI - Agents", "AI - Gemini", "Google Cloud", "Google I/O Extended"]
 
 # Event history for Impact Analytics
 events:

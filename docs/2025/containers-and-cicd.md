@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 25
 language: English
-tags: ["containers","docker","kubernetes","gke","cloud-run","ci-cd","cloud-build","devops","software-supply-chain","binary-authorization"]
+tags: ["Cloud - Serverless & Containers", "Cloud - App Development"]
 
 # Event history for Impact Analytics
 events:
