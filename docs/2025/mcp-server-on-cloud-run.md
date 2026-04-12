@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 40
 language: English
-tags: ["mcp","model-context-protocol","cloud-run","ai-agents","agentic-ai","gemini","vertex-ai","serverless","function-calling","security"]
+tags: ["Cloud - Serverless & Containers", "AI - LLM", "AI - Gemini", "Google Cloud", "DevFest", "AI - Gemini CLI"]
 
 # Event history for Impact Analytics
 events:

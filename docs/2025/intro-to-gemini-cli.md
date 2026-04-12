@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 45
 language: English
-tags: ["gemini","gemini-cli","cli","terminal","open-source","developer-tools","ai-agents","mcp","generative-ai","automation"]
+tags: ["AI - Gemini", "AI - Gemini CLI", "Cloud - AI Tools", "DevFest"]
 
 # Event history for Impact Analytics
 events:

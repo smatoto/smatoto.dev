@@ -715,12 +715,6 @@ Congratulations! You've built an agent that dynamically loads knowledge on deman
 - **Share skills**: Skills following the [agentskills.io](https://agentskills.io) spec are portable — share them via git repositories
 - **Build a team library**: Distribute standardized skills across your organization
 
-### Explore advanced patterns
-
-- **Script execution**: Use `RunSkillScriptTool` to let skills execute code
-- **Multi-agent pipelines**: Create specialized agents with different skill sets that collaborate
-- **Community skills**: Browse [awesome-claude-skills](https://github.com/anthropics/awesome-claude-skills) and ADK Core Skills for ready-made capabilities
-
 ### Resources
 
 - [ADK Documentation](https://google.github.io/adk-docs/)

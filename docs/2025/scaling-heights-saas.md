@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 30
 language: English
-tags: ["saas","devops","terraform","iac","containers","docker","kubernetes","gke","cloud-run","ci-cd"]
+tags: ["Cloud - App Development", "Web", "Google Cloud", "Cloud - Serverless & Containers"]
 
 # Event history for Impact Analytics
 events:

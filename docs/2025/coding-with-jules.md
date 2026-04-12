@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 30
 language: English
-tags: ["jules","ai-agents","generative-ai","agentic-coding","gemini","vertex-ai","github","developer-tools","autonomous-coding","productivity"]
+tags: ["AI - Agents", "AI - Generative AI", "AI - Gemini", "Google I/O Extended"]
 
 # Event history for Impact Analytics
 events:

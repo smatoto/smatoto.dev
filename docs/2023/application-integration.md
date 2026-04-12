@@ -8,7 +8,7 @@ status: Delivered
 level: Advanced
 duration: 30
 language: English
-tags: ["application-integration","ipaas","low-code","automation","connectors","apigee","devops","serverless","workflow-orchestration","integration"]
+tags: ["Cloud - App Development", "Google Cloud", "Google I/O Extended"]
 
 # Event history for Impact Analytics
 events:

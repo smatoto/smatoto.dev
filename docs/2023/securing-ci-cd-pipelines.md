@@ -8,7 +8,7 @@ status: Delivered
 level: Advanced
 duration: 40
 language: English
-tags: ["devops","cicd","security","slsa","software-supply-chain","binary-authorization","cloud-build","artifact-registry","gke","cloud-run"]
+tags: ["Cloud - Serverless & Containers", "Cloud - App Development", "Google Cloud"]
 
 # Event history for Impact Analytics
 events:

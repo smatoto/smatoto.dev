@@ -8,7 +8,7 @@ status: Delivered
 level: Intermediate
 duration: 30
 language: English
-tags: ["serverless","cloud-run","cloud-functions","ai","gpu","gemma","genkit","devops","containers","llm"]
+tags: ["Cloud - Serverless & Containers", "AI", "AI - LLM", "Google Cloud", "DevFest"]
 
 # Event history for Impact Analytics
 events:
