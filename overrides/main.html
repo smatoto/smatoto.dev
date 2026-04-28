@@ -1,0 +1,262 @@
+{% extends "base.html" %} {% block content %} {% if page.meta and page.meta.type
+%}
+<div class="md-content__inner md-typeset">
+    {# Header #}
+    <h1>{{ page.title }}</h1>
+    {% if page.meta.summary %}
+    <p
+        style="
+            font-size: 0.85rem;
+            color: var(--md-default-fg-color--light);
+            margin-bottom: 1.5rem;
+        "
+    >
+        {{ page.meta.summary }}
+    </p>
+    {% endif %}
+
+    <hr style="margin: 1.5rem 0" />
+
+    {# Metadata grid #}
+    <div
+        style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        "
+    >
+        {% if page.meta.type %}
+        <div
+            style="
+                background: var(--md-code-bg-color);
+                padding: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+            "
+        >
+            <div
+                style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--md-default-fg-color--light);
+                    margin-bottom: 0.25rem;
+                "
+            >
+                Type
+            </div>
+            <div style="font-weight: 600">{{ page.meta.type }}</div>
+        </div>
+        {% endif %} {% if page.meta.category %}
+        <div
+            style="
+                background: var(--md-code-bg-color);
+                padding: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+            "
+        >
+            <div
+                style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--md-default-fg-color--light);
+                    margin-bottom: 0.25rem;
+                "
+            >
+                Category
+            </div>
+            <div style="font-weight: 600">{{ page.meta.category }}</div>
+        </div>
+        {% endif %} {% if page.meta.level %}
+        <div
+            style="
+                background: var(--md-code-bg-color);
+                padding: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+            "
+        >
+            <div
+                style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--md-default-fg-color--light);
+                    margin-bottom: 0.25rem;
+                "
+            >
+                Level
+            </div>
+            <div style="font-weight: 600">{{ page.meta.level }}</div>
+        </div>
+        {% endif %} {% if page.meta.duration %}
+        <div
+            style="
+                background: var(--md-code-bg-color);
+                padding: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+            "
+        >
+            <div
+                style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--md-default-fg-color--light);
+                    margin-bottom: 0.25rem;
+                "
+            >
+                Duration
+            </div>
+            <div style="font-weight: 600">{{ page.meta.duration }} mins</div>
+        </div>
+        {% endif %} {% if page.meta.language %}
+        <div
+            style="
+                background: var(--md-code-bg-color);
+                padding: 0.5rem;
+                border-radius: 8px;
+                text-align: center;
+            "
+        >
+            <div
+                style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    color: var(--md-default-fg-color--light);
+                    margin-bottom: 0.25rem;
+                "
+            >
+                Language
+            </div>
+            <div style="font-weight: 600">{{ page.meta.language }}</div>
+        </div>
+        {% endif %}
+    </div>
+
+    {# Events #} {% if page.meta.events %}
+    <h2>Events</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Organizer</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Attendees</th>
+                <th>Links</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in page.meta.events %}
+            <tr>
+                <td>
+                    {% if event.url and event.url.link %}
+                    <a href="{{ event.url.link }}" target="_blank"
+                        >{{ event.name }}</a
+                    >
+                    {% else %} {{ event.name }} {% endif %}
+                </td>
+                <td>{{ event.organizer }}</td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.location }}</td>
+                <td>{{ event.attendees if event.attendees else "—" }}</td>
+                <td>
+                    {% if event.slides and event.slides.link %}
+                    <a
+                        href="{{ event.slides.link }}"
+                        target="_blank"
+                        style="white-space: nowrap"
+                        >📊 {{ event.slides.name }}</a
+                    >
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %} {# Resources #} {% if page.meta.resources %} {% set ns =
+    namespace(has_resources=false) %} {% for key, res in
+    page.meta.resources.items() %} {% if res and res.link %}{% set
+    ns.has_resources = true %}{% endif %} {% endfor %} {% if ns.has_resources %}
+    <h2>Resources</h2>
+    <div
+        style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        "
+    >
+        {% for key, res in page.meta.resources.items() %} {% if res and res.link
+        %}
+        <a
+            href="{{ res.link }}"
+            target="_blank"
+            style="
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                background: var(--md-primary-fg-color);
+                color: var(--md-primary-bg-color);
+                padding: 0.4rem 1rem;
+                border-radius: 999px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                text-decoration: none;
+            "
+        >
+            {% if key == "github" %}⌨️{% elif key == "recording" %}▶️{% elif key
+            == "blog" %}📝{% endif %} {{ res.name }}
+        </a>
+        {% endif %} {% endfor %}
+    </div>
+    {% endif %} {% endif %} {# Tags #} {% if page.meta.tags %}
+    <div style="margin-top: 1rem; margin-bottom: 0.5rem">
+        {% for tag in page.meta.tags %}
+        <span
+            style="
+                display: inline-block;
+                background: var(--md-code-bg-color);
+                color: var(--md-default-fg-color--light);
+                padding: 0.25rem 0.6rem;
+                border-radius: 4px;
+                font-size: 0.6rem;
+                font-family: var(--md-code-font);
+                margin-right: 0.4rem;
+                margin-bottom: 0.4rem;
+            "
+            >{{ tag }}</span
+        >
+        {% endfor %}
+    </div>
+    {% endif %} {# QR Code #} {% if page.meta.qr_code %}
+    <details style="margin-top: 2rem">
+        <summary
+            style="
+                cursor: pointer;
+                font-size: 0.85rem;
+                color: var(--md-default-fg-color--light);
+            "
+        >
+            QR Code for this session
+        </summary>
+        <div style="margin-top: 1rem">
+            <img
+                src="{{ page.meta.qr_code }}"
+                alt="QR Code"
+                style="width: 150px; height: 150px; border-radius: 8px"
+            />
+        </div>
+    </details>
+    {% endif %}
+
+    <hr style="margin: 2rem 0" />
+</div>
+
+{{ page.content }} {% else %} {{ page.content }} {% endif %} {% endblock %}
