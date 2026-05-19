@@ -1,0 +1,2690 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal Developer Blog of Sermil Matoto">
+      
+      
+        <meta name="author" content="Sermil Matoto">
+      
+      
+        <link rel="canonical" href="https://smatoto.dev/codelabs/adk-agent-skills/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../categories/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Build a Skill-Powered ADK Agent - smatoto.dev</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-a-skill-powered-adk-agent" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="smatoto.dev" class="md-header__button md-logo" aria-label="smatoto.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            smatoto.dev
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build a Skill-Powered ADK Agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/smatoto/smatoto.dev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    smatoto/smatoto.dev
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../certifications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Certifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2026/beyond-the-code/" class="md-tabs__link">
+          
+  
+  
+  Sessions
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Codelabs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../categories/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Categories
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="smatoto.dev" class="md-nav__button md-logo" aria-label="smatoto.dev" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    smatoto.dev
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/smatoto/smatoto.dev" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    smatoto/smatoto.dev
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sessions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2026
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026/beyond-the-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beyond the Code: Building Confidence and Systems in an AI World
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2026/skills-for-adk-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills for ADK Agents: Optimizing Context with Progressive Disclosure
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2025
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/coding-with-jules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Prompt to PR: Autonomous Coding with Jules
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/containers-and-cicd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Code to Cloud with Containers and CI/CD Workflows
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/scaling-heights-saas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scaling Heights: The Art of Seamless Growth
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/intro-to-gemini-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started with the Gemini API in Vertex AI with cURL / REST API
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/adk-and-gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build AI Agents with ADK and Gemini
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/intro-to-gemini-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bringing AI to Your Command Line: Hands-on with Gemini CLI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2025/mcp-server-on-cloud-run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy a Secure MCP Server on Cloud Run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2024
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2024/functions-on-the-run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions on the Run: Unified Serverless Platform
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2023
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/securing-ci-cd-pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Securing the CI/CD pipelines on Google Cloud
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/application-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process Automation using Application Integration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2023/building-quickly-in-google-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building quickly in Google Cloud: Jump Start Solutions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--Delivered"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codelabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Codelabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Skill-Powered ADK Agent
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a Skill-Powered ADK Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-youll-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll build
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you'll need
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-understand-the-core-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Understand the Core Concept
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1 — Understand the Core Concept">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-with-monolithic-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem with monolithic prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressive-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progressive disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-vs-mcp-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills vs. MCP Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-set-up-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Set Up Your Project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2 — Set Up Your Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-the-project-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create the project directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create a virtual environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Install dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configure-your-api-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configure your API key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-create-the-package-init-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Create the package init file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-verify-your-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Verify your directory structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-an-inline-skill-pattern-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create an Inline Skill (Pattern 1)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3 — Create an Inline Skill (Pattern 1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-appagentpy-with-the-following-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create app/agent.py with the following content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-wire-up-the-skilltoolset-and-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Wire up the SkillToolset and Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-test-it-with-the-adk-dev-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test it with the ADK dev UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-a-file-based-skill-pattern-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create a File-Based Skill (Pattern 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Create a File-Based Skill (Pattern 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-the-blog-writer-skill-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create the blog-writer skill directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-appskillsblog-writerskillmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create app/skills/blog-writer/SKILL.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-appskillsblog-writerreferencesstyle-guidemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create app/skills/blog-writer/references/style-guide.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-load-the-file-based-skill-in-agentpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Load the file-based skill in agent.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-update-the-skilltoolset-to-include-the-new-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Update the SkillToolset to include the new skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-test-the-three-level-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Test the three-level loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-add-an-external-skill-pattern-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Add an External Skill (Pattern 3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5 — Add an External Skill (Pattern 3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-the-content-research-writer-skill-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create the content-research-writer skill directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-appskillscontent-research-writerskillmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create app/skills/content-research-writer/SKILL.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-appskillscontent-research-writerreferencesseo-guidelinesmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create app/skills/content-research-writer/references/seo-guidelines.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-load-the-external-skill-in-agentpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Load the external skill in agent.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-update-the-skilltoolset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Update the SkillToolset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-test-multi-skill-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Test multi-skill loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-a-meta-skill-pattern-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Create a Meta Skill (Pattern 4)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6 — Create a Meta Skill (Pattern 4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-the-skill-creator-to-agentpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Add the skill-creator to agent.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-update-the-skilltoolset-and-agent-instruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Update the SkillToolset and Agent instruction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-test-the-meta-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test the meta skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-verify-the-final-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Verify the Final Project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 7 — Verify the Final Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#your-complete-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your complete directory structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#your-complete-agentpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your complete agent.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-scenarios-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test scenarios to try
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — What's Next
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8 — What&#39;s Next">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extend-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extend the agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Optional) Clean Up
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                  <h1 id="build-a-skill-powered-adk-agent">Build a Skill-Powered ADK Agent</h1>
+<h2 id="overview">Overview</h2>
+<p><strong>Duration:</strong> 30-60 minutes | <strong>Level:</strong> Intermediate</p>
+<p>In this codelab, you'll build an AI agent using Google's <strong>Agent Development Kit (ADK)</strong> that uses <strong>skills</strong> — reusable, on-demand knowledge modules — instead of cramming everything into a monolithic system prompt. By the end, your agent will dynamically load domain expertise only when it needs it, cutting baseline context usage by up to 90%.</p>
+<p>You'll implement four skill patterns, progressively building from simple inline definitions to a self-extending agent that generates its own new skills.</p>
+<h3 id="what-youll-build">What you'll build</h3>
+<p>A blog-writing assistant agent that:</p>
+<ul>
+<li>Loads an <strong>SEO checklist</strong> skill defined directly in Python code</li>
+<li>Loads a <strong>blog-writer</strong> skill from a local <code>SKILL.md</code> file with reference documents</li>
+<li>Loads a <strong>content-research</strong> skill sourced from an external repository</li>
+<li>Loads a <strong>skill-creator</strong> meta-skill that generates new skill definitions on demand</li>
+</ul>
+<h3 id="what-youll-learn">What you'll learn</h3>
+<ul>
+<li>The difference between <strong>MCP tools</strong> (actions) and <strong>agent skills</strong> (knowledge)</li>
+<li>The <strong>progressive disclosure</strong> pattern: L1 metadata, L2 instructions, L3 resources</li>
+<li>How <strong>SkillToolset</strong> auto-registers <code>list_skills</code>, <code>load_skill</code>, and <code>load_skill_resource</code> tools</li>
+<li>Four skill patterns: inline, file-based, external, and meta-skills</li>
+<li>How to test and debug agents with ADK's built-in dev UI</li>
+</ul>
+<h3 id="what-youll-need">What you'll need</h3>
+<ul>
+<li>Python 3.10+</li>
+<li>A Google AI API key (<a href="https://aistudio.google.com/apikey">Get one here</a>)</li>
+<li>A terminal and text editor</li>
+<li>Basic familiarity with Python and Markdown</li>
+</ul>
+<hr />
+<h2 id="step-1-understand-the-core-concept">Step 1 — Understand the Core Concept</h2>
+<p>Before writing code, let's understand <strong>why</strong> skills exist.</p>
+<h3 id="the-problem-with-monolithic-prompts">The problem with monolithic prompts</h3>
+<p>A typical approach to giving an agent domain knowledge is stuffing everything into the system prompt. For an agent with 10 knowledge areas, that means <strong>~10,000 tokens loaded on every single call</strong> — whether the user asks about SEO optimization or just says "hello."</p>
+<h3 id="progressive-disclosure">Progressive disclosure</h3>
+<p>Skills solve this with a three-level loading strategy:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What's loaded</th>
+<th>When</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1 — Metadata</strong></td>
+<td>Skill names + descriptions</td>
+<td>Always (auto-injected)</td>
+<td>~100 tokens per skill</td>
+</tr>
+<tr>
+<td><strong>L2 — Instructions</strong></td>
+<td>Full skill content</td>
+<td>On demand via <code>load_skill</code></td>
+<td>Varies per skill</td>
+</tr>
+<tr>
+<td><strong>L3 — Resources</strong></td>
+<td>Reference files, guides, specs</td>
+<td>On demand via <code>load_skill_resource</code></td>
+<td>Varies per file</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> The agent starts with ~1,000 tokens of L1 metadata and loads L2/L3 content only when needed.</p>
+<h3 id="skills-vs-mcp-tools">Skills vs. MCP Tools</h3>
+<p>This distinction is important:</p>
+<ul>
+<li><strong>MCP Tools</strong> give agents the ability to <strong>do things</strong> — call APIs, query databases, execute code</li>
+<li><strong>Agent Skills</strong> give agents <strong>knowledge</strong> — domain expertise, guidelines, and reference material loaded on demand</li>
+</ul>
+<p>Skills don't replace tools — they complement them. An agent can load a "code-review" skill for knowledge of review best practices, then use an MCP tool to actually fetch the pull request.</p>
+<hr />
+<h2 id="step-2-set-up-your-project">Step 2 — Set Up Your Project</h2>
+<h3 id="1-create-the-project-directory">1. Create the project directory</h3>
+<pre><code class="language-bash">mkdir -p adk-skills-lab/app/skills
+cd adk-skills-lab
+</code></pre>
+<h3 id="2-create-a-virtual-environment">2. Create a virtual environment</h3>
+<pre><code class="language-bash">python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+# .venv\Scripts\activate    # Windows
+</code></pre>
+<h3 id="3-install-dependencies">3. Install dependencies</h3>
+<pre><code class="language-bash">pip install google-adk python-dotenv
+</code></pre>
+<h3 id="4-configure-your-api-key">4. Configure your API key</h3>
+<p>Create the environment file:</p>
+<pre><code class="language-bash">cat &gt; app/.env &lt;&lt; 'EOF'
+GOOGLE_API_KEY=your-key-here
+EOF
+</code></pre>
+<p>Replace <code>your-key-here</code> with your actual Google AI API key.</p>
+<blockquote>
+<p><strong>Important:</strong> Don't commit API keys to version control. Add <code>.env</code> to your <code>.gitignore</code> before continuing. Alternatively, skip the file and export <code>GOOGLE_API_KEY</code> in your shell instead.</p>
+</blockquote>
+<h3 id="5-create-the-package-init-file">5. Create the package init file</h3>
+<pre><code class="language-bash">cat &gt; app/__init__.py &lt;&lt; 'EOF'
+from . import agent
+EOF
+</code></pre>
+<h3 id="6-verify-your-directory-structure">6. Verify your directory structure</h3>
+<p>At this point, your project should look like this:</p>
+<pre><code>adk-skills-lab/
+└── app/
+    ├── __init__.py
+    ├── .env
+    └── skills/          # empty for now
+</code></pre>
+<hr />
+<h2 id="step-3-create-an-inline-skill-pattern-1">Step 3 — Create an Inline Skill (Pattern 1)</h2>
+<p>Inline skills are Python dictionaries defined directly in code. They're best for <strong>small, stable rules</strong> that don't need external files.</p>
+<h3 id="1-create-appagentpy-with-the-following-content">1. Create <code>app/agent.py</code> with the following content</h3>
+<pre><code class="language-python">&quot;&quot;&quot;Blog Skills Agent — Demonstrates progressive skill loading with ADK.&quot;&quot;&quot;
+
+import pathlib
+
+from google.adk import Agent
+from google.adk.skills import load_skill_from_dir
+from google.adk.skills import models
+from google.adk.tools.skill_toolset import SkillToolset
+
+
+# ---------------------------------------------------------------------------
+# Pattern 1: Inline Skill — defined directly in Python code
+# Best for: simple, stable rules that don't need external files
+# ---------------------------------------------------------------------------
+seo_skill = models.Skill(
+    frontmatter=models.Frontmatter(
+        name=&quot;seo-checklist&quot;,
+        description=(
+            &quot;SEO optimization checklist for blog posts. Covers title tags,&quot;
+            &quot; meta descriptions, heading structure, keyword placement,&quot;
+            &quot; and readability best practices.&quot;
+        ),
+    ),
+    instructions=(
+        &quot;When optimizing a blog post for SEO, check each item:\n\n&quot;
+        &quot;1. **Title**: 50-60 chars, primary keyword near the start\n&quot;
+        &quot;2. **Meta description**: 150-160 chars, includes a call-to-action\n&quot;
+        &quot;3. **Headings**: H2/H3 hierarchy, keywords in 2-3 headings\n&quot;
+        &quot;4. **First paragraph**: Primary keyword in first 100 words\n&quot;
+        &quot;5. **Keyword density**: 1-2%, never forced or awkward\n&quot;
+        &quot;6. **Paragraphs**: 2-3 sentences max, use bullet lists often\n&quot;
+        &quot;7. **Links**: 2-3 internal + 3-5 external to authoritative sources\n&quot;
+        &quot;8. **Images**: Alt text with keywords, compressed, descriptive names\n&quot;
+        &quot;9. **URL slug**: Short, keyword-rich, hyphenated\n\n&quot;
+        &quot;Review the content against each item and suggest specific improvements.&quot;
+    ),
+)
+</code></pre>
+<p><strong>Key points:</strong>
+- <code>name</code> and <code>description</code> form the <strong>L1 metadata</strong> — this is what the agent sees at all times
+- <code>instructions</code> is the <strong>L2 content</strong> — loaded only when the agent calls <code>load_skill</code>
+- The description should be specific enough that the LLM knows <strong>when</strong> to load this skill</p>
+<h3 id="2-wire-up-the-skilltoolset-and-agent">2. Wire up the SkillToolset and Agent</h3>
+<p>Add the following to the bottom of <code>app/agent.py</code>:</p>
+<pre><code class="language-python"># ---------------------------------------------------------------------------
+# Assemble: Package skills into a SkillToolset
+# ---------------------------------------------------------------------------
+skill_toolset = SkillToolset(
+    skills=[seo_skill]
+)
+
+root_agent = Agent(
+    model=&quot;gemini-2.5-flash&quot;,
+    name=&quot;blog_skills_agent&quot;,
+    description=&quot;A blog-writing agent powered by reusable skills.&quot;,
+    instruction=(
+        &quot;You are a blog-writing assistant with specialized skills.\n\n&quot;
+        &quot;When the user asks you to write, research, or optimize a blog post:\n&quot;
+        &quot;1. Load the relevant skill(s) to get detailed instructions\n&quot;
+        &quot;2. Use `load_skill_resource` to access reference materials\n&quot;
+        &quot;3. Follow the skill's step-by-step instructions\n\n&quot;
+        &quot;Always explain which skill you're using and why.&quot;
+    ),
+    tools=[skill_toolset],
+)
+</code></pre>
+<h3 id="3-test-it-with-the-adk-dev-ui">3. Test it with the ADK dev UI</h3>
+<pre><code class="language-bash">adk web .
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Use <code>.</code> (current directory), not <code>app/</code>. This prevents ADK from discovering the <code>skills/</code> subdirectories as separate agent applications.</p>
+</blockquote>
+<p>Open the dev UI in your browser and try this prompt:</p>
+<blockquote>
+<p><em>"Review this blog post title for SEO: 'My Thoughts on Python'"</em></p>
+</blockquote>
+<p><strong>What to observe:</strong>
+- The agent calls <code>list_skills</code> to see available skills (L1)
+- It calls <code>load_skill("seo-checklist")</code> to get the full instructions (L2)
+- It applies the checklist to your query
+- Check the <strong>function calls</strong> panel to see the progressive loading in action</p>
+<hr />
+<h2 id="step-4-create-a-file-based-skill-pattern-2">Step 4 — Create a File-Based Skill (Pattern 2)</h2>
+<p>File-based skills store knowledge in directories with a <code>SKILL.md</code> file and optional reference materials. They're best for <strong>complex skills with supporting documents</strong>.</p>
+<h3 id="1-create-the-blog-writer-skill-directory">1. Create the blog-writer skill directory</h3>
+<pre><code class="language-bash">mkdir -p app/skills/blog-writer/references
+</code></pre>
+<h3 id="2-create-appskillsblog-writerskillmd">2. Create <code>app/skills/blog-writer/SKILL.md</code></h3>
+<pre><code class="language-markdown">---
+name: blog-writer
+description: Blog post writing skill with structure templates and style guidelines. Guides the agent through writing well-structured, engaging technical blog posts with proper formatting, section flow, and reader engagement techniques.
+---
+
+# Blog Writer Instructions
+
+When asked to write a blog post, follow these steps:
+
+## Step 1: Structure
+Use `load_skill_resource` to read `references/style-guide.md` for the writing style rules.
+
+## Step 2: Outline First
+Before writing, create a brief outline with:
+- **Hook**: Opening that grabs attention (question, bold claim, or relatable problem)
+- **Context**: Why this topic matters now
+- **Core sections**: 3-5 sections that build on each other
+- **Takeaway**: What the reader walks away knowing
+
+## Step 3: Write Each Section
+For each section:
+1. Start with a clear subheading (H2)
+2. Lead with the key point, then support it
+3. Include code examples where relevant (use fenced code blocks with language tags)
+4. Keep paragraphs to 2-3 sentences
+5. Use bullet lists for steps or comparisons
+
+## Step 4: Polish
+- Add transition sentences between sections
+- Ensure consistent tone throughout
+- Verify all code examples are complete and runnable
+- End with a clear call-to-action or next steps
+</code></pre>
+<h3 id="3-create-appskillsblog-writerreferencesstyle-guidemd">3. Create <code>app/skills/blog-writer/references/style-guide.md</code></h3>
+<p>This is the <strong>L3 resource</strong> — loaded only when the agent explicitly requests it:</p>
+<pre><code class="language-markdown"># Blog Writing Style Guide
+
+## Voice
+- **Conversational but authoritative** — write like you're explaining to a smart colleague
+- Use &quot;you&quot; and &quot;we&quot; — never &quot;one should&quot;
+- Share opinions backed by experience: &quot;I've found that...&quot; or &quot;In practice...&quot;
+
+## Structure Rules
+- **Title**: Action-oriented, includes the technology name (e.g., &quot;Building X with Y&quot;)
+- **Introduction**: Max 3 paragraphs. State the problem, your solution, what the reader will learn
+- **Sections**: Each H2 section should be independently valuable
+- **Code blocks**: Always show complete, runnable code — never pseudocode
+- **Conclusion**: Summarize key points, suggest next steps, link to resources
+
+## Formatting
+- Use H2 (`##`) for main sections, H3 (`###`) for subsections
+- Bold key terms on first use
+- Use tables for comparisons (3+ items)
+- Use numbered lists for sequential steps
+- Use bullet lists for non-sequential items
+- Add alt text to all images
+
+## Anti-Patterns
+- Never start with &quot;In today's rapidly evolving...&quot;
+- Never use &quot;leverage&quot; when &quot;use&quot; works
+- Never say &quot;it's important to note that&quot; — just state the thing
+- Never write walls of text without subheadings
+- Never show incomplete code snippets
+</code></pre>
+<h3 id="4-load-the-file-based-skill-in-agentpy">4. Load the file-based skill in <code>agent.py</code></h3>
+<p>Add this below the inline skill definition:</p>
+<pre><code class="language-python"># ---------------------------------------------------------------------------
+# Pattern 2: File-Based Skill — loaded from a local directory
+# Best for: complex skills with reference docs, templates, or scripts
+# ---------------------------------------------------------------------------
+blog_writer_skill = load_skill_from_dir(
+    pathlib.Path(__file__).parent / &quot;skills&quot; / &quot;blog-writer&quot;
+)
+</code></pre>
+<h3 id="5-update-the-skilltoolset-to-include-the-new-skill">5. Update the SkillToolset to include the new skill</h3>
+<pre><code class="language-python">skill_toolset = SkillToolset(
+    skills=[seo_skill, blog_writer_skill]
+)
+</code></pre>
+<h3 id="6-test-the-three-level-loading">6. Test the three-level loading</h3>
+<p>Restart the dev UI (<code>adk web .</code>) and try:</p>
+<blockquote>
+<p><em>"Write a blog post about getting started with ADK"</em></p>
+</blockquote>
+<p><strong>What to observe:</strong>
+- The agent loads the <code>blog-writer</code> skill (L2 instructions)
+- It then calls <code>load_skill_resource("blog-writer", "references/style-guide.md")</code> to get the style guide (L3)
+- It follows the step-by-step writing process from the skill
+- The agent applies style rules from the reference document</p>
+<p>This is the power of progressive disclosure: the style guide is <strong>only</strong> loaded when the agent actually needs to write.</p>
+<hr />
+<h2 id="step-5-add-an-external-skill-pattern-3">Step 5 — Add an External Skill (Pattern 3)</h2>
+<p>External skills come from community repositories or shared team libraries. They use the exact same <code>SKILL.md</code> format — the only difference is where the files come from.</p>
+<h3 id="1-create-the-content-research-writer-skill-directory">1. Create the content-research-writer skill directory</h3>
+<pre><code class="language-bash">mkdir -p app/skills/content-research-writer/references
+</code></pre>
+<h3 id="2-create-appskillscontent-research-writerskillmd">2. Create <code>app/skills/content-research-writer/SKILL.md</code></h3>
+<pre><code class="language-markdown">---
+name: content-research-writer
+description: Content research and SEO writing methodology. Guides the agent through topic research, keyword identification, competitive analysis, and writing SEO-optimized content that ranks well and provides genuine value to readers.
+---
+
+# Content Research &amp; Writer Instructions
+
+When asked to research a topic and write content, follow this methodology:
+
+## Phase 1: Topic Research
+1. Identify the **primary topic** and break it into subtopics
+2. List 3-5 **key questions** the target audience would ask
+3. Identify the **target keyword** and 3-5 related keywords
+4. Note what makes this content **unique** — what angle hasn't been covered?
+
+## Phase 2: Content Planning
+1. Define the **content type**: tutorial, deep-dive, comparison, or opinion
+2. Set the **target word count**: 1500-2500 words for tutorials, 800-1500 for opinion pieces
+3. Plan **code examples** if technical (at least 2-3 per tutorial)
+4. Identify **internal links** to related content and **external links** to authoritative sources
+
+## Phase 3: SEO Optimization
+Read `references/seo-guidelines.md` for detailed SEO rules using `load_skill_resource`.
+
+Apply these during writing:
+- Primary keyword in title, first paragraph, and 2-3 subheadings
+- Natural keyword density (1-2%, never forced)
+- Meta description draft (150-160 chars)
+- URL slug suggestion (short, keyword-rich)
+
+## Phase 4: Writing
+1. Write the **hook** first — make the reader care in 2 sentences
+2. Deliver on the **promise** of the title in every section
+3. Use the **inverted pyramid**: most important info first in each section
+4. End with **actionable takeaways** the reader can apply immediately
+
+## Phase 5: Quality Check
+- Does every section add unique value?
+- Are all claims supported by evidence or code?
+- Would you share this with a colleague? If not, what's missing?
+</code></pre>
+<h3 id="3-create-appskillscontent-research-writerreferencesseo-guidelinesmd">3. Create <code>app/skills/content-research-writer/references/seo-guidelines.md</code></h3>
+<pre><code class="language-markdown"># SEO Guidelines Reference
+
+## On-Page SEO Checklist
+
+### Title Tag
+- 50-60 characters
+- Primary keyword near the beginning
+- Include a power word (Build, Master, Complete, Essential)
+- Format: &quot;[Action] [Topic] with [Technology] — [Benefit]&quot;
+
+### Meta Description
+- 150-160 characters
+- Include primary keyword naturally
+- End with a call-to-action or value proposition
+- Make it a complete, compelling sentence
+
+### Headings (H2/H3)
+- H2 for main sections (5-8 per post)
+- H3 for subsections within H2
+- Include keywords in 2-3 headings naturally
+- Make headings scannable — reader should understand the post from headings alone
+
+### Content Structure
+- First 100 words must include the primary keyword
+- Use short paragraphs (2-3 sentences max)
+- Include bullet/numbered lists every 300-400 words
+- Add a table of contents for posts over 2000 words
+- Bold key terms and definitions
+
+### Internal &amp; External Links
+- 2-3 internal links to related content
+- 3-5 external links to authoritative sources
+- Use descriptive anchor text (not &quot;click here&quot;)
+- Open external links in new tab
+
+### Images
+- Alt text with relevant keywords
+- Descriptive file names (not IMG_001.png)
+- Compress to under 200KB
+- Use WebP format when possible
+
+## Keyword Strategy
+- **Primary keyword**: Use 3-5 times naturally
+- **Secondary keywords**: Use 1-2 times each
+- **LSI keywords**: Related terms that appear naturally in good content
+- **Never keyword stuff** — if it reads awkwardly, remove the keyword
+</code></pre>
+<h3 id="4-load-the-external-skill-in-agentpy">4. Load the external skill in <code>agent.py</code></h3>
+<p>Add this below the file-based skill:</p>
+<pre><code class="language-python"># ---------------------------------------------------------------------------
+# Pattern 3: External Skill — loaded from a downloaded/cloned repository
+# Best for: community skills, shared org standards, third-party capabilities
+# Same as file-based, but the source is an external repo
+# ---------------------------------------------------------------------------
+content_researcher_skill = load_skill_from_dir(
+    pathlib.Path(__file__).parent / &quot;skills&quot; / &quot;content-research-writer&quot;
+)
+</code></pre>
+<h3 id="5-update-the-skilltoolset">5. Update the SkillToolset</h3>
+<pre><code class="language-python">skill_toolset = SkillToolset(
+    skills=[seo_skill, blog_writer_skill, content_researcher_skill]
+)
+</code></pre>
+<h3 id="6-test-multi-skill-loading">6. Test multi-skill loading</h3>
+<p>Restart the dev UI and try:</p>
+<blockquote>
+<p><em>"Research the topic of AI agents and write an SEO-optimized blog post about it"</em></p>
+</blockquote>
+<p><strong>What to observe:</strong>
+- The agent loads <strong>multiple skills</strong> — possibly in parallel
+- It uses the content-research skill's methodology for research phases
+- It pulls in SEO guidelines from the reference document
+- It may also load the blog-writer skill for structure guidance</p>
+<blockquote>
+<p><strong>Tip:</strong> Try asking about something the agent doesn't have a skill for:
+<em>"Can you help me design a database schema?"</em>
+A well-built agent will check its available skills and honestly say it doesn't have that capability — rather than hallucinating an answer.</p>
+</blockquote>
+<hr />
+<h2 id="step-6-create-a-meta-skill-pattern-4">Step 6 — Create a Meta Skill (Pattern 4)</h2>
+<p>This is where it gets powerful. A <strong>meta skill</strong> teaches the agent how to create new skills — making it <strong>self-extending</strong>.</p>
+<h3 id="1-add-the-skill-creator-to-agentpy">1. Add the skill-creator to <code>agent.py</code></h3>
+<p>Add this below the external skill:</p>
+<pre><code class="language-python"># ---------------------------------------------------------------------------
+# Pattern 4: Meta Skill — a skill that creates new skills
+# Best for: self-extending agents that generate new capabilities on demand
+# ---------------------------------------------------------------------------
+skill_creator = models.Skill(
+    frontmatter=models.Frontmatter(
+        name=&quot;skill-creator&quot;,
+        description=(
+            &quot;Creates new ADK-compatible skill definitions from requirements.&quot;
+            &quot; Generates complete SKILL.md files following the Agent Skills&quot;
+            &quot; specification at agentskills.io.&quot;
+        ),
+    ),
+    instructions=(
+        &quot;When asked to create a new skill, generate a complete SKILL.md file.\n\n&quot;
+        &quot;Read `references/skill-spec.md` for the format specification.\n&quot;
+        &quot;Read `references/example-skill.md` for a working example.\n\n&quot;
+        &quot;Follow these rules:\n&quot;
+        &quot;1. Name must be kebab-case, max 64 characters\n&quot;
+        &quot;2. Description must be under 1024 characters\n&quot;
+        &quot;3. Instructions should be clear, step-by-step\n&quot;
+        &quot;4. Reference files in references/ for detailed domain knowledge\n&quot;
+        &quot;5. Keep SKILL.md under 500 lines — put details in references/\n&quot;
+        &quot;6. Output the complete file content the user can save directly\n&quot;
+    ),
+    resources=models.Resources(
+        references={
+            &quot;skill-spec.md&quot;: (
+                &quot;# Agent Skills Specification (agentskills.io)\n\n&quot;
+                &quot;## SKILL.md Format\n&quot;
+                &quot;Every skill directory must contain a SKILL.md file.\n\n&quot;
+                &quot;### Frontmatter (YAML)\n&quot;
+                &quot;```yaml\n&quot;
+                &quot;---\n&quot;
+                &quot;name: my-skill-name          # kebab-case, max 64 chars\n&quot;
+                &quot;description: What this skill does.  # max 1024 chars\n&quot;
+                &quot;---\n&quot;
+                &quot;```\n\n&quot;
+                &quot;### Body (Markdown)\n&quot;
+                &quot;The body contains the skill instructions. Write clear,\n&quot;
+                &quot;step-by-step instructions the agent will follow.\n\n&quot;
+                &quot;### Directory Structure\n&quot;
+                &quot;```\n&quot;
+                &quot;my-skill-name/\n&quot;
+                &quot;  SKILL.md           # Required: metadata + instructions\n&quot;
+                &quot;  references/        # Optional: detailed reference docs\n&quot;
+                &quot;  assets/            # Optional: templates, data files\n&quot;
+                &quot;  scripts/           # Optional: executable scripts\n&quot;
+                &quot;```\n\n&quot;
+                &quot;### Key Rules\n&quot;
+                &quot;- Directory name MUST match the `name` field in frontmatter\n&quot;
+                &quot;- Name must be kebab-case: ^[a-z0-9]+(-[a-z0-9]+)*$\n&quot;
+                &quot;- Description is what the LLM uses to decide when to load &quot;
+                &quot;the skill\n&quot;
+                &quot;- Keep instructions actionable — tell the agent WHAT to do\n&quot;
+                &quot;- Use `load_skill_resource` references for detailed docs\n&quot;
+            ),
+            &quot;example-skill.md&quot;: (
+                &quot;# Example: Code Review Skill\n\n&quot;
+                &quot;```markdown\n&quot;
+                &quot;---\n&quot;
+                &quot;name: code-review\n&quot;
+                &quot;description: Reviews Python code for correctness, style, &quot;
+                &quot;and performance. Checks for common bugs, PEP 8 compliance, &quot;
+                &quot;and suggests optimizations.\n&quot;
+                &quot;---\n\n&quot;
+                &quot;# Code Review Instructions\n\n&quot;
+                &quot;When asked to review code:\n\n&quot;
+                &quot;## Step 1: Read the Guidelines\n&quot;
+                &quot;Use `load_skill_resource` to read &quot;
+                &quot;`references/review-checklist.md`.\n\n&quot;
+                &quot;## Step 2: Analyze\n&quot;
+                &quot;Check the code against each item in the checklist.\n\n&quot;
+                &quot;## Step 3: Report\n&quot;
+                &quot;Provide findings organized by severity:\n&quot;
+                &quot;- **Critical**: Bugs, security issues\n&quot;
+                &quot;- **Warning**: Style violations, performance concerns\n&quot;
+                &quot;- **Info**: Suggestions for improvement\n&quot;
+                &quot;```\n&quot;
+            ),
+        }
+    ),
+)
+</code></pre>
+<p><strong>Key points:</strong>
+- The <code>resources</code> field provides <strong>L3 references</strong> — the spec and an example
+- The agent reads these references to understand how to generate valid <code>SKILL.md</code> files
+- Generated skills follow the <a href="https://agentskills.io">agentskills.io</a> specification, making them portable across any compatible agent</p>
+<h3 id="2-update-the-skilltoolset-and-agent-instruction">2. Update the SkillToolset and Agent instruction</h3>
+<p>Replace your <code>skill_toolset</code> and <code>root_agent</code> definitions with the final version:</p>
+<pre><code class="language-python"># ---------------------------------------------------------------------------
+# Assemble: Package all skills into a single SkillToolset
+# The toolset auto-registers list_skills, load_skill, and load_skill_resource
+# ---------------------------------------------------------------------------
+skill_toolset = SkillToolset(
+    skills=[seo_skill, blog_writer_skill, content_researcher_skill, skill_creator]
+)
+
+root_agent = Agent(
+    model=&quot;gemini-2.5-flash&quot;,
+    name=&quot;blog_skills_agent&quot;,
+    description=&quot;A blog-writing agent powered by reusable skills.&quot;,
+    instruction=(
+        &quot;You are a blog-writing assistant with specialized skills.\n\n&quot;
+        &quot;You have four skills available:\n&quot;
+        &quot;- **seo-checklist**: SEO optimization rules (load for SEO review)\n&quot;
+        &quot;- **blog-writer**: Writing structure and style guide (load for writing)\n&quot;
+        &quot;- **content-research-writer**: Research methodology (load for research)\n&quot;
+        &quot;- **skill-creator**: Generate new skill definitions (load to create skills)\n\n&quot;
+        &quot;When the user asks you to write, research, or optimize a blog post:\n&quot;
+        &quot;1. Load the relevant skill(s) to get detailed instructions\n&quot;
+        &quot;2. Use `load_skill_resource` to access reference materials\n&quot;
+        &quot;3. Follow the skill's step-by-step instructions\n&quot;
+        &quot;4. Apply multiple skills together when appropriate\n\n&quot;
+        &quot;When the user asks you to create a new skill:\n&quot;
+        &quot;1. Load the skill-creator skill\n&quot;
+        &quot;2. Read the specification and example references\n&quot;
+        &quot;3. Generate a complete SKILL.md that follows the spec\n\n&quot;
+        &quot;Always explain which skill you're using and why.&quot;
+    ),
+    tools=[skill_toolset],
+)
+</code></pre>
+<h3 id="3-test-the-meta-skill">3. Test the meta skill</h3>
+<p>Restart the dev UI and try:</p>
+<blockquote>
+<p><em>"Create a new skill for reviewing Python code for security vulnerabilities"</em></p>
+</blockquote>
+<p><strong>What to observe:</strong>
+- The agent loads the <code>skill-creator</code> skill (L2)
+- It calls <code>load_skill_resource</code> to read <code>skill-spec.md</code> and <code>example-skill.md</code> (L3)
+- It generates a complete, valid <code>SKILL.md</code> file you could save directly into <code>app/skills/</code></p>
+<blockquote>
+<p><strong>Tip:</strong> Try asking the agent to create a skill for a domain you care about — API design review, Kubernetes troubleshooting, or technical interview prep. The generated skill follows the agentskills.io spec and can be used by any compatible agent.</p>
+</blockquote>
+<hr />
+<h2 id="step-7-verify-the-final-project">Step 7 — Verify the Final Project</h2>
+<h3 id="your-complete-directory-structure">Your complete directory structure</h3>
+<pre><code>adk-skills-lab/
+└── app/
+    ├── __init__.py
+    ├── .env
+    ├── agent.py
+    └── skills/
+        ├── blog-writer/
+        │   ├── SKILL.md
+        │   └── references/
+        │       └── style-guide.md
+        └── content-research-writer/
+            ├── SKILL.md
+            └── references/
+                └── seo-guidelines.md
+</code></pre>
+<h3 id="your-complete-agentpy">Your complete <code>agent.py</code></h3>
+<p>The final file should contain all four skill patterns wired into a single <code>SkillToolset</code> and <code>Agent</code>. Review your file against this checklist:</p>
+<ul>
+<li>[ ] <strong>Imports</strong>: <code>Agent</code>, <code>load_skill_from_dir</code>, <code>models</code>, <code>SkillToolset</code></li>
+<li>[ ] <strong>Pattern 1</strong>: <code>seo_skill</code> — inline <code>models.Skill</code> with frontmatter + instructions</li>
+<li>[ ] <strong>Pattern 2</strong>: <code>blog_writer_skill</code> — <code>load_skill_from_dir</code> pointing to <code>skills/blog-writer</code></li>
+<li>[ ] <strong>Pattern 3</strong>: <code>content_researcher_skill</code> — <code>load_skill_from_dir</code> pointing to <code>skills/content-research-writer</code></li>
+<li>[ ] <strong>Pattern 4</strong>: <code>skill_creator</code> — inline <code>models.Skill</code> with <code>resources.references</code></li>
+<li>[ ] <strong>SkillToolset</strong>: All four skills packaged together</li>
+<li>[ ] <strong>Agent</strong>: Wired with the toolset and clear instructions</li>
+</ul>
+<h3 id="test-scenarios-to-try">Test scenarios to try</h3>
+<table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Expected behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"List your available skills"</td>
+<td>Agent calls <code>list_skills</code>, returns L1 metadata for all 4 skills</td>
+</tr>
+<tr>
+<td>"Review this title for SEO: 'Python Tips'"</td>
+<td>Loads <code>seo-checklist</code> skill, applies the 9-point checklist</td>
+</tr>
+<tr>
+<td>"Write a blog post about Docker containers"</td>
+<td>Loads <code>blog-writer</code> + <code>seo-checklist</code>, fetches <code>style-guide.md</code></td>
+</tr>
+<tr>
+<td>"Research and write about serverless computing"</td>
+<td>Loads <code>content-research-writer</code>, fetches <code>seo-guidelines.md</code></td>
+</tr>
+<tr>
+<td>"Create a skill for reviewing API designs"</td>
+<td>Loads <code>skill-creator</code>, fetches spec + example references</td>
+</tr>
+<tr>
+<td>"Help me design a database schema"</td>
+<td>Checks skills, admits it doesn't have that capability</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-8-whats-next">Step 8 — What's Next</h2>
+<p>Congratulations! You've built an agent that dynamically loads knowledge on demand using four skill patterns. Here's where to go from here:</p>
+<h3 id="extend-the-agent">Extend the agent</h3>
+<ul>
+<li><strong>Add more skills</strong>: Create <code>SKILL.md</code> files for your own domains (DevOps runbooks, code review checklists, writing standards)</li>
+<li><strong>Share skills</strong>: Skills following the <a href="https://agentskills.io">agentskills.io</a> spec are portable — share them via git repositories</li>
+<li><strong>Build a team library</strong>: Distribute standardized skills across your organization</li>
+</ul>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://google.github.io/adk-docs/">ADK Documentation</a></li>
+<li><a href="https://agentskills.io">Agent Skills Specification</a></li>
+<li><a href="https://github.com/lavinigam-gcp/build-with-adk/tree/main/adk-agent-skills-tutorial">Companion Repository</a> — complete working code for this codelab</li>
+<li>Blog series by Lavi Nigam:<ul>
+<li><a href="https://lavinigam.com/posts/adk-agent-skills-part1/">Part 1: Progressive Disclosure with SkillToolset</a></li>
+<li><a href="https://lavinigam.com/posts/adk-agent-skills-part2/">Part 2: File-Based &amp; External Skills</a></li>
+<li><a href="https://lavinigam.com/posts/adk-agent-skills-part3/">Part 3: Self-Extending Meta Skills</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="optional-clean-up">(Optional) Clean Up</h2>
+<p>To remove the project and its dependencies:</p>
+<pre><code class="language-bash">deactivate                  # exit the virtual environment
+cd ..
+rm -rf adk-skills-lab       # delete the project directory
+</code></pre>
+<p>To revoke your API key, visit <a href="https://aistudio.google.com/apikey">Google AI Studio</a> and delete the key you created.</p>  
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 <a href="https://github.com/smatoto"  target="_blank" rel="noopener">Sermil Matoto</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/smatoto" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/smatoto" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://developers.google.com/profile/u/smatoto" target="_blank" rel="noopener" title="developers.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M500 261.8C500 403.3 403.1 504 260 504 122.8 504 12 393.2 12 256S122.8 8 260 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C270.5 52.6 106.3 116.6 106.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H260v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.credly.com/users/smatoto/badges#credly" target="_blank" rel="noopener" title="www.credly.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.8 13.154a.3.3 0 0 0-.101-.024.4.4 0 0 0-.202.048c-.06.028-.092.08-.127.136-.087.128-.15.268-.226.4-.107.187-.246.351-.38.515-.135.156-.286.291-.424.44-.028.027-.072.043-.107.027-.028-.016-.036-.056-.032-.088.04-.38.075-.763.123-1.138.02-.172.043-.336.063-.512.028-.247.056-.487.087-.735l.234-1.824c.02-.128.032-.372-.135-.52a.45.45 0 0 0-.233-.116.46.46 0 0 0-.254.06c-.226.16-.297.504-.365.76-.142.603-.178 1.241-.471 1.804a1.8 1.8 0 0 1-.202.316.7.7 0 0 1-.186.18.33.33 0 0 1-.246.051.37.37 0 0 1-.238-.207.871.87 0 0 1-.063-.324 4.5 4.5 0 0 1 .24-1.585c.045-.132.089-.252.104-.383.028-.156.028-.38-.114-.516-.131-.128-.337-.18-.504-.128-.194.056-.31.244-.372.392-.198.463-.25.95-.317 1.446-.044.327-.127.64-.293.926a2.7 2.7 0 0 1-.603.72c-.118.087-.222.123-.328.107a.38.38 0 0 1-.278-.208.9.9 0 0 1-.095-.315 3.361 3.36 0 0 1-.036-.616c.004-.223 0-.44.044-.658.075-.39.678-1.937.808-2.345.135-.407.262-.823.353-1.246.08-.38.123-.767.11-1.15-.007-.277-.07-.576-.288-.736a.611.61 0 0 0-.603-.048.97.97 0 0 0-.455.428 2.5 2.5 0 0 0-.226.59 12 12 0 0 0-.266 1.29c-.071.429-.138.848-.206 1.268-.06.355-.206 1.614-.261 1.88-.06.272-.175.54-.301.787-.131.268-.258.536-.408.791a.7.7 0 0 1-.175.224c-.08.06-.182.088-.27.048-.102-.048-.146-.176-.166-.292-.075-.435-.012-.875.072-1.302.083-.431.44-2.4.519-2.851.099-.532.24-1.05.285-1.59.028-.388.09-.88-.202-1.187-.115-.136-.31-.16-.44-.136-.174.036-.31.176-.388.296-.1.128-.186.28-.258.467-.115.284-.186.615-.261.91l-.032.129q-.123.574-.186 1.162a16.95 16.948 0 0 0-.06.632q-.011.15-.027.307c0 .08.007.168-.028.244a.3.3 0 0 1-.052.068c-.08.072-.202.06-.31.056-.557-.016-1.045.3-1.35.755-.18.252-.281.542-.39.834-.01.048-.034.1-.054.152-.051.143-.13.327-.222.511a3 3 0 0 1-.317.46 3.3 3.3 0 0 1-.384.41 1.1 1.1 0 0 1-.515.26c-.174.04-.384-.043-.543-.203a.9.9 0 0 1-.206-.54c-.004-.055-.004-.115.028-.163.05-.068.146-.072.23-.076a1.62 1.62 0 0 0 1.375-1.015c.138-.34.178-.698.122-1.046a1.2 1.2 0 0 0-.19-.48.9.9 0 0 0-.396-.323c-.293-.14-.658-.127-1.01.004-.575.232-.951.74-1.134 1.562l-.02.088c-.114.487-.23 1-.582 1.354-.127.12-.261.163-.368.143-.044-.004-.08-.04-.103-.075-.096-.16.003-.532.15-1a4 4 0 0 0 .1-.366.93.93 0 0 0-.108-.495.8.8 0 0 0-.372-.324c-.143-.064-.31-.06-.468-.06h-.047c-.044 0-.103 0-.151-.012a.22.22 0 0 1-.147-.127.5.5 0 0 1 .016-.232c.004-.02.012-.048.016-.072a.37.37 0 0 0-.162-.412.51.51 0 0 0-.468-.036.77.77 0 0 0-.364.348.77.77 0 0 0-.103.48c.04.13.07.32.043.475-.055.28-.222.51-.384.74-.04.05-.072.106-.107.16a5 5 0 0 1-.706.825c-.372.335-.804.575-1.232.67-.745.165-1.506-.06-1.91-.734-.222-.38-.32-.827-.348-1.266a5.4 5.4 0 0 1 .424-2.516c.328-.76.816-1.52 1.715-1.614.353-.04.753.083.912.4.115.23.075.506 0 .75-.072.244-.175.49-.18.75-.003.26.124.54.37.616.238.072.495-.08.634-.29.138-.21.186-.46.245-.704a6.282 6.281 0 0 1 .662-1.634c.139-.236.297-.488.254-.76a.54.54 0 0 0-.373-.415.54.54 0 0 0-.535.144c-.134.148-.206.371-.387.43-.17.06-.35-.055-.507-.134-.6-.32-1.336-.312-1.963-.048-.634.25-1.146.735-1.526 1.294C.462 8.53.098 9.508.022 10.48c-.027.34-.031.695 0 1.038.036.46.1.854.214 1.206.139.423.317.79.547 1.094.266.34.587.6.94.747.372.148.784.22 1.192.208a3.2 3.2 0 0 0 1.177-.283 4.3 4.3 0 0 0 1.026-.68c.309-.26.594-.559.84-.89q.243-.336.44-.708a5 5 0 0 0 .178-.383c.044-.104.087-.215.202-.26.056-.043.15-.02.202.013.064.04.115.075.135.135.048.116.02.232-.004.332v.012c-.028.1-.055.203-.091.303-.14.424-.238.811-.16 1.195.045.207.128.387.25.527a.84.84 0 0 0 .504.264c.246.04.51-.028.725-.132q.217-.103.397-.26c.06-.06.122-.12.174-.184.044-.06.087-.147.178-.143a.15.15 0 0 1 .107.064c.028.031.04.071.06.115.23.52.776.84 1.335.84h.07c.27 0 .556-.093.79-.22.27-.14.48-.348.7-.552.02-.016.045-.04.073-.044.035-.008.07.012.099.044a.3.3 0 0 1 .047.1c.135.34.46.6.824.66a1.1 1.1 0 0 0 .99-.356c.056-.06.104-.128.167-.176.064-.044.15-.076.222-.044.107.04.135.164.182.268.107.235.357.371.615.375.289 0 .554-.148.764-.34.195-.183.353-.399.516-.61a.3.3 0 0 1 .106-.096c.04-.024.096-.028.13 0 .033.024.045.06.06.091.163.4.587.652 1.01.648.417-.004.809-.224 1.103-.516.095-.092.194-.2.32-.21.14-.017.207.114.254.22.072.142.115.238.25.338.158.116.36.152.547.1.17-.04.34-.156.47-.316.072-.088.112-.204.19-.284.092-.087.132.028.136.1q.022.176.008.352c-.016.236-.052.471-.08.703-.011.068-.02.136-.063.188-.06.068-.166.08-.253.064a3 3 0 0 0-.321-.028l-.14-.016c-.201-.012-.4-.036-.61-.044h-.185c-.404 0-.733.048-1.03.16-.48.187-.852.57-1.003 1.018a1.3 1.3 0 0 0-.052.64c.04.203.13.403.282.587.265.315.68.515 1.149.543.408.02.852-.064 1.292-.26.848-.367 1.482-1.094 1.696-1.95 0-.02.01-.039.023-.043q.448-.157.813-.428c.245-.187.467-.399.65-.643q.135-.18.253-.37c.07-.125.13-.257.202-.38a.9.9 0 0 0 .13-.316.41.41 0 0 0-.05-.328.26.26 0 0 0-.135-.124m-13.68-1.63c.017-.071.045-.14.06-.206a1.9 1.9 0 0 1 .262-.504c.04-.048.08-.1.135-.136a.25.25 0 0 1 .186-.048c.107.02.183.128.202.236.032.18-.04.396-.114.555a1.1 1.1 0 0 1-.31.415c-.06.044-.114.088-.178.116-.028.008-.063.028-.115.028h-.016c-.055 0-.114-.028-.126-.088a.8.8 0 0 1 .015-.367m4.308-.184c-.004.072-.024.148-.028.223a5 5 0 0 0 0 .779c.012.152.047.3-.016.444a1.07 1.07 0 0 1-.567.643.56.56 0 0 1-.245.056q-.03-.002-.06-.004c-.12 0-.214-.092-.265-.18a.871.87 0 0 1-.1-.272 2.13 2.13 0 0 1 .072-1.122c.08-.22.202-.435.38-.594a.87.87 0 0 1 .563-.24.3.3 0 0 1 .206.064c.04.044.06.104.056.164a.05.05 0 0 1 .004.04m6.43 4.653c-.015.044-.06.104-.08.14-.042.08-.102.163-.161.235a2.6 2.6 0 0 1-.317.304c-.238.18-.503.311-.777.387a2 2 0 0 1-.487.072h-.04a.8.8 0 0 1-.515-.18.43.43 0 0 1-.158-.25.54.54 0 0 1 .047-.305.78.78 0 0 1 .38-.383c.326-.16.682-.176 1.019-.16.139.004.265.012.4.02.107.004.218.012.325.024q.086 0 .17.012c.044.004.092-.004.135.008.06.004.068.036.06.076"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "toc.integrate", "search.highlight", "search.suggest", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/extra.js"></script>
+      
+    
+  </body>
+</html>
