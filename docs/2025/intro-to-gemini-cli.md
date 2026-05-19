@@ -34,6 +34,17 @@ events:
     slides:
       name: "Slide Deck"
       link: "https://docs.google.com/presentation/d/e/2PACX-1vTnYaqtHLYAKqcUyjKav85Pwx95b7O7WYgeyyh7HRKbEtdER8g7xvEpsuJl2QNPReh6c0fIqEsYqvHP/pub?start=false&loop=false&delayms=3000"
+  - name: "Build with AI 2026 Cagayan de Oro"
+    organizer: "GDG Cagayan de Oro"
+    date: 2026-05-16
+    location: "My Hub Events Place, Cagayan de Oro, Philippines"
+    attendees: 40
+    url:
+      name: "Event Page"
+      link: "https://gdg.community.dev/events/details/google-gdg-cagayan-de-oro-presents-build-with-ai-2026-cagayan-de-oro/"
+    slides:
+      name: "Slide Deck"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vT3aLPEbS_9ifTKedrrO3-amvn7547DUyQ0oSRPLRcpv4xtsdxHV1nM22xJESKL3MeT62Q-1vauCvYt/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
