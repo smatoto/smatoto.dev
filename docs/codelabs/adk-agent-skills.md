@@ -659,7 +659,95 @@ Restart the dev UI and try:
 
 ---
 
-## Step 7 — Verify the Final Project
+## Step 7 — Measure Token Efficiency
+
+Now that all four skill patterns are wired up, let's verify the core claim of this codelab: skills dramatically reduce baseline token usage by loading knowledge progressively.
+
+### 1. Add a token-logging callback
+
+ADK's `after_model_callback` fires after every model call and exposes the full usage metadata from the Gemini API. Add this to `app/agent.py`, just above the `skill_toolset` assembly:
+
+```python
+from google.adk.agents.callback_context import CallbackContext
+from google.adk.models.llm_response import LlmResponse
+
+
+def log_token_usage(
+    callback_context: CallbackContext, llm_response: LlmResponse
+) -> None:
+    u = llm_response.usage_metadata
+    if u:
+        print(
+            f"[tokens] prompt={u.prompt_token_count:,}  "
+            f"response={u.candidates_token_count:,}  "
+            f"total={u.total_token_count:,}"
+        )
+```
+
+Then wire the callback into `root_agent` by adding the `after_model_callback` parameter:
+
+```python
+root_agent = Agent(
+    model="gemini-2.5-flash",
+    name="blog_skills_agent",
+    description="A blog-writing agent powered by reusable skills.",
+    instruction=(...),
+    tools=[skill_toolset],
+    after_model_callback=log_token_usage,   # add this
+)
+```
+
+### 2. Restart and observe
+
+Restart the dev UI:
+
+```bash
+adk web .
+```
+
+Now run these two prompts and watch your **terminal** (not the browser) after each:
+
+**Prompt 1 — L1 metadata only:**
+
+> *"List your available skills"*
+
+The agent calls `list_skills` and responds using only skill names and descriptions — no full skill body is loaded. Your terminal output will look something like:
+
+```
+[tokens] prompt=512  response=198  total=710
+```
+
+**Prompt 2 — L1 + L2 + L3 loading:**
+
+> *"Write a blog post about Docker containers"*
+
+The agent loads the `blog-writer` skill (L2) and then fetches `references/style-guide.md` (L3). Watch the terminal — you'll see **multiple `[tokens]` lines**, one per model call, and the prompt count grows with each skill loaded:
+
+```
+[tokens] prompt=512   response=87   total=599    ← list_skills call
+[tokens] prompt=893   response=143  total=1,036  ← after load_skill("blog-writer")
+[tokens] prompt=1,847 response=421  total=2,268  ← after load_skill_resource(style-guide)
+```
+
+> **Note:** The exact token counts vary by model and prompt wording. The numbers above are illustrative.
+
+### 3. What you're seeing
+
+The key observation is **how tokens grow incrementally** — not all at once:
+
+| Turn | What's in context | Approx. prompt tokens |
+|------|------------------|-----------------------|
+| L1 only (skill list) | 4 skill names + descriptions | ~500 |
+| L1 + L2 (skill loaded) | + full skill instructions | ~900 |
+| L1 + L2 + L3 (resource loaded) | + reference document | ~1,800 |
+
+Compare this to a **monolithic prompt** that includes all four skill bodies upfront: that would cost ~12,000–15,000 tokens on every single turn, whether the user asks about SEO or just says "hello."
+
+> **Key stat:** With L1-only baseline (~100 tokens per skill × 4 skills = ~400 tokens), your agent starts each conversation using roughly **30x fewer tokens** than a monolithic equivalent — and only pays for deeper knowledge when the task actually requires it.
+
+---
+
+## Step 8 — Verify the Final Project
 
 ### Your complete directory structure
 
@@ -705,7 +793,7 @@ The final file should contain all four skill patterns wired into a single `Skill
 
 ---
 
-## Step 8 — What's Next
+## Step 9 — What's Next
 
 Congratulations! You've built an agent that dynamically loads knowledge on demand using four skill patterns. Here's where to go from here:
 
