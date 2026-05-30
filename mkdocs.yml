@@ -31,6 +31,7 @@ theme:
     - search.highlight
     - search.suggest
     - content.tooltips
+    - content.code.copy
   icon:
     logo: material/code-tags
     repo: fontawesome/brands/github

@@ -724,9 +724,9 @@ The agent calls `list_skills` and responds using only skill names and descriptio
 The agent loads the `blog-writer` skill (L2) and then fetches `references/style-guide.md` (L3). Watch the terminal — you'll see **multiple `[tokens]` lines**, one per model call, and the prompt count grows with each skill loaded:
 
 ```
-[tokens] prompt=512   response=87   total=599    ← list_skills call
-[tokens] prompt=893   response=143  total=1,036  ← after load_skill("blog-writer")
-[tokens] prompt=1,847 response=421  total=2,268  ← after load_skill_resource(style-guide)
+[tokens] prompt=812   response=95   total=907    ← list_skills call
+[tokens] prompt=1,284 response=167  total=1,451  ← after load_skill("blog-writer")
+[tokens] prompt=2,103 response=389  total=2,492  ← after load_skill_resource(style-guide)
 ```
 
 > **Note:** The exact token counts vary by model and prompt wording. The numbers above are illustrative.
@@ -737,13 +737,13 @@ The key observation is **how tokens grow incrementally** — not all at once:
 
 | Turn | What's in context | Approx. prompt tokens |
 |------|------------------|-----------------------|
-| L1 only (skill list) | 4 skill names + descriptions | ~500 |
-| L1 + L2 (skill loaded) | + full skill instructions | ~900 |
-| L1 + L2 + L3 (resource loaded) | + reference document | ~1,800 |
+| L1 only (skill list) | base prompt + tool defs + 4 skill names/descriptions | ~800 |
+| L1 + L2 (skill loaded) | + full skill instructions | ~1,300 |
+| L1 + L2 + L3 (resource loaded) | + reference document | ~2,100 |
 
 Compare this to a **monolithic prompt** that includes all four skill bodies upfront: that would cost ~12,000–15,000 tokens on every single turn, whether the user asks about SEO or just says "hello."
 
-> **Key stat:** With L1-only baseline (~100 tokens per skill × 4 skills = ~400 tokens), your agent starts each conversation using roughly **30x fewer tokens** than a monolithic equivalent — and only pays for deeper knowledge when the task actually requires it.
+> **Key stat:** The fixed overhead (base prompt + ADK tool definitions) is present in both approaches - that's why your L1 baseline reads ~800 tokens rather than just ~400. What skills save is the *incremental* cost of skill content: ~100 tokens per skill at L1 versus ~500-1,000 tokens per skill if the full body were always loaded. For this 4-skill agent, a monolithic equivalent would cost roughly ~2,800-4,800 tokens at baseline - approximately **3-6x more**. That gap scales fast: the session's 20-skill scenario shows ~20,000 tokens (monolithic) vs. ~1,000 tokens (L1 only).
 
 ---
 
