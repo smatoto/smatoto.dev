@@ -23,6 +23,17 @@ events:
     slides:
       name: "Slide Deck"
       link: "https://docs.google.com/presentation/d/e/2PACX-1vRlfYmnGdoakSThoE1QwpmSKVeBH4BqLDvGsSOxP0LO3e0VQuo3hRn-J7N75IXavGnenm9UXMsKW6fa/pub?start=false&loop=false&delayms=3000"
+  - name: "Build with AI Cebu 2026"
+    organizer: "GDG Cebu"
+    date: 2026-05-30
+    location: "Zero-Ten Park Cebu Mandaue, Mandaue, Philippines"
+    attendees: TBA
+    url:
+      name: "Event Page"
+      link: "https://gdg.community.dev/events/details/google-gdg-cebu-presents-build-with-ai-cebu-2026/"
+    slides:
+      name: "Slide Deck"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vSdlH39PXmdtPllDaRUXFv-j1o-AfNE_LloO4OrmVJSI3sAKk_ZlcCvKMFXxmO0CGNRIpEgcKVQBYMy/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
