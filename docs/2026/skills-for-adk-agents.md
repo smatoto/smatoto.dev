@@ -27,7 +27,7 @@ events:
     organizer: "GDG Cebu"
     date: 2026-05-30
     location: "Zero-Ten Park Cebu Mandaue, Mandaue, Philippines"
-    attendees: TBA
+    attendees: 60
     url:
       name: "Event Page"
       link: "https://gdg.community.dev/events/details/google-gdg-cebu-presents-build-with-ai-cebu-2026/"
