@@ -7,7 +7,6 @@ category: DevOps
 status: Delivered
 level: Advanced
 duration: 40
-language: English
 tags: ["Cloud - Serverless & Containers", "Cloud - App Development", "Google Cloud"]
 
 # Event history for Impact Analytics

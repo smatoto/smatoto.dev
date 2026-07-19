@@ -7,7 +7,6 @@ category: App Dev
 status: Delivered
 level: Beginner
 duration: 30
-language: English
 tags: ["AI", "AI - Agents", "AI - Gemini", "Cloud - App Development", "Cloud - Serverless & Containers", "Google Cloud"]
 
 # Event history for Impact Analytics

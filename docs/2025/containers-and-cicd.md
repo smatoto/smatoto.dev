@@ -7,7 +7,6 @@ category: DevOps
 status: Delivered
 level: Intermediate
 duration: 25
-language: English
 tags: ["Cloud - Serverless & Containers", "Cloud - App Development"]
 
 # Event history for Impact Analytics

@@ -7,7 +7,6 @@ category: AI
 status: Delivered
 level: Intermediate
 duration: 40
-language: English
 tags: ["Cloud - Serverless & Containers", "AI - LLM", "AI - Gemini", "Google Cloud", "DevFest", "AI - Gemini CLI"]
 
 # Event history for Impact Analytics

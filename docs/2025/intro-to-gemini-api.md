@@ -7,7 +7,6 @@ category: AI
 status: Delivered
 level: Intermediate
 duration: 40
-language: English
 tags: ["AI - Vertex AI", "AI - Gemini", "Build with AI"]
 
 # Event history for Impact Analytics

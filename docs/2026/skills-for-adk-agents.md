@@ -7,7 +7,6 @@ category: AI
 status: Delivered # Draft, Upcoming, or Delivered
 level: Intermediate
 duration: 45
-language: English
 tags: ["AI - Agent Development Kit (ADK)","AI - Agents","AI - Gemini","Google Cloud","Build with AI"]
 
 # Event history for Impact Analytics
