@@ -30,18 +30,18 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
 ## Featured Sessions
 
 <div class="featured-grid">
+  <a href="./2026/claude-code-masterclass/" class="session-card">
+    <span class="category-badge ai">AI</span>
+    <h3>Getting Started with Claude Code</h3>
+    <span class="event-name">AI Pilipinas Meetup #33</span>
+    <div class="attendees">70 attendees</div>
+  </a>
+  
   <a href="./2026/skills-for-adk-agents/" class="session-card">
     <span class="category-badge ai">AI</span>
     <h3>Skills for ADK Agents</h3>
     <span class="event-name">Build with AI Manila 2026</span>
     <div class="attendees">80 attendees</div>
-  </a>
-
-  <a href="./2025/intro-to-gemini-cli/" class="session-card">
-    <span class="category-badge ai">AI</span>
-    <h3>Gemini CLI Workshop</h3>
-    <span class="event-name">DevFest Manila & Cebu 2025</span>
-    <div class="attendees">308 attendees</div>
   </a>
 
   <a href="./2025/containers-and-cicd/" class="session-card">

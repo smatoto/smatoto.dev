@@ -37,16 +37,16 @@ A collection of certifications reflecting continuous learning across cloud platf
     <span class="cert-date">Issued: November 2024 | Expires: 11 November 2027</span>
   </a>
 
-  <a href="https://www.credly.com/badges/e3d27eb0-0c3d-4f85-8162-d7e2d85aa4e6" class="cert-card" data-expires="2026-06-06" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/e3d27eb0-0c3d-4f85-8162-d7e2d85aa4e6" class="cert-card" data-expires="2028-05-04" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Professional Cloud Database Engineer</h3>
-    <span class="cert-date">Issued: July 2022 | Expires: 6 June 2026</span>
+    <span class="cert-date">Issued: July 2022 | Expires: 4 May 2028</span>
   </a>
 
-  <a href="https://www.credly.com/badges/ded49db6-17c8-4911-a6bc-ee913ee846fa" class="cert-card" data-expires="2026-04-22" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/ded49db6-17c8-4911-a6bc-ee913ee846fa" class="cert-card" data-expires="2028-04-15" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Professional Cloud Network Engineer</h3>
-    <span class="cert-date">Issued: April 2022 | Expires: 22 April 2026</span>
+    <span class="cert-date">Issued: April 2022 | Expires: 15 April 2028</span>
   </a>
 
   <a href="https://www.credly.com/badges/d94fd5ae-f9cc-4fe1-a51c-121f98e6b6c3" class="cert-card" data-expires="2027-10-17" target="_blank" rel="noopener noreferrer">
@@ -138,10 +138,10 @@ A collection of certifications reflecting continuous learning across cloud platf
     <span class="cert-date">Issued: September 2020 | Expires: 13 March 2024</span>
   </a>
 
-  <a href="https://www.credly.com/badges/a3c455fb-52da-4123-b471-488674a381d4" class="cert-card" data-expires="2024-03-13" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/5d56a31f-cb74-4fa8-93f0-ff1084429983" class="cert-card" data-expires="2029-05-27" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact aws" title="Amazon Web Services" aria-label="Amazon Web Services">AWS</span>
     <h3>AWS Certified Developer - Associate</h3>
-    <span class="cert-date">Issued: August 2020 | Expires: 13 March 2024</span>
+    <span class="cert-date">Issued: May 2026 | Expires: 27 May 2029</span>
   </a>
 
   <a href="https://www.credly.com/badges/426c9d69-e704-4aca-8c54-309b33c82fb7" class="cert-card" data-expires="2026-07-10" target="_blank" rel="noopener noreferrer">
