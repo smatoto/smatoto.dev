@@ -7,7 +7,6 @@ category: App Dev # App Dev, DevOps, or AI
 status: Draft # Draft, Upcoming, or Delivered
 level: Beginner # Beginner, Intermediate, or Advanced
 duration: 0
-language: English
 tags: ["google-cloud", "gde", "google-developer-expert"]
 
 # Event history for Impact Analytics

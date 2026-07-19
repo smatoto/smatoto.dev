@@ -7,7 +7,6 @@ category: AI
 status: Delivered
 level: Intermediate
 duration: 45
-language: English
 tags: ["AI - Agent Development Kit (ADK)", "AI - Agents", "AI - Gemini", "Google Cloud", "Google I/O Extended"]
 
 # Event history for Impact Analytics

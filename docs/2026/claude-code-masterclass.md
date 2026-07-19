@@ -7,7 +7,6 @@ category: AI
 status: Delivered
 level: Beginner
 duration: 75
-language: English
 tags: ["AI - Agents", "Claude Code", "Anthropic", "Developer Tools"]
 
 # Event history for Impact Analytics

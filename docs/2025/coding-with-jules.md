@@ -7,7 +7,6 @@ category: AI
 status: Delivered
 level: Intermediate
 duration: 30
-language: English
 tags: ["AI - Agents", "AI - Generative AI", "AI - Gemini", "Google I/O Extended"]
 
 # Event history for Impact Analytics

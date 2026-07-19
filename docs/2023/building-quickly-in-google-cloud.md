@@ -7,7 +7,6 @@ category: App Dev
 status: Delivered
 level: Intermediate
 duration: 40
-language: English
 tags: ["Cloud - App Development", "Google Cloud", "DevFest"]
 
 # Event history for Impact Analytics

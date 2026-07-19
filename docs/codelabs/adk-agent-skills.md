@@ -4,7 +4,6 @@ title: "Build a Skill-Powered ADK Agent"
 summary: "A hands-on codelab where you build a blog-writing AI agent using Google ADK's SkillToolset and the progressive disclosure pattern — implementing all four skill patterns from simple inline definitions to a self-extending meta skill that generates new skills on demand."
 level: Intermediate
 duration: "30-60"
-language: English
 tags: ["AI - Agent Development Kit (ADK)", "AI - Agents", "AI - Gemini", "Google Cloud", "Build with AI"]
 
 # Sessions where this codelab is used
