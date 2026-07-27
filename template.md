@@ -7,7 +7,7 @@ category: App Dev # App Dev, DevOps, or AI
 status: Draft # Draft, Upcoming, or Delivered
 level: Beginner # Beginner, Intermediate, or Advanced
 duration: 0
-tags: ["google-cloud", "gde", "google-developer-expert"]
+tags: ["Google Cloud", "AI - Agents"] # Advocu label format: preserve spaces and capitalization
 
 # Event history for Impact Analytics
 events:
