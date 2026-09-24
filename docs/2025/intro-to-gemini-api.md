@@ -52,8 +52,6 @@ qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://
 
 ## Abstract
 
-> _The full talk abstract: the version submitted to CFPs and shared with event organizers._
-
 In this hands-on workshop, developers will get started with the Gemini API in Vertex AI using nothing but cURL and REST: no SDKs required. Starting from the basics of the Vertex AI API surface, participants will learn how to authenticate, structure requests, and call Gemini models directly via HTTP. Through a series of guided labs, attendees will explore key capabilities including text generation, streaming, multi-turn chat, function calling, multimodal inputs (images and video), controlled generation with JSON schemas, and using Google Search as a grounding tool. By the end of the session, developers will have a working mental model of how the Gemini API works under the hood: knowledge that transfers directly to any language or SDK they choose to use in their projects.
 
 

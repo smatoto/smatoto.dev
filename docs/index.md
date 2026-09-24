@@ -12,11 +12,11 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
 
 <div class="stats-row">
   <div class="stat-card">
-    <div class="stat-number">14</div>
+    <div class="stat-number">15</div>
     <div class="stat-label">Sessions</div>
   </div>
   <div class="stat-card">
-    <div class="stat-number">1,804+</div>
+    <div class="stat-number">1,915+</div>
     <div class="stat-label">Developers Reached</div>
   </div>
   <div class="stat-card">
@@ -30,11 +30,11 @@ I hold multipe certifications across Google Cloud, AWS, Okta, and HashiCorp, dem
 ## Featured Sessions
 
 <div class="featured-grid">
-  <a href="./2026/claude-code-masterclass/" class="session-card">
-    <span class="category-badge ai">AI</span>
-    <h3>Getting Started with Claude Code</h3>
-    <span class="event-name">AI Pilipinas Meetup #33</span>
-    <div class="attendees">70 attendees</div>
+  <a href="./2026/full-stack-apps-with-ai-studio/" class="session-card">
+    <span class="category-badge app-dev">App Dev</span>
+    <h3>Building Full-Stack Apps with Google AI Studio, Cloud Run, &amp; Cloud SQL</h3>
+    <span class="event-name">Google I/O Extended Cloud Manila 2026</span>
+    <div class="attendees">111 attendees</div>
   </a>
   
   <a href="./2026/skills-for-adk-agents/" class="session-card">
