@@ -6,6 +6,7 @@ Browse sessions by category:
 
 | Title | Event |
 | ----- | ----- |
+| [Building Full-Stack Apps with Google AI Studio, Cloud Run, & Cloud SQL](./2026/full-stack-apps-with-ai-studio.md) | Google I/O Extended Cloud Manila 2026 |
 | [Beyond the Code: Building Confidence and Systems in an AI World](./2026/beyond-the-code.md) | Cosmos 2026 |
 | [Building quickly in Google Cloud - Jump Start Solutions](./2023/building-quickly-in-google-cloud.md) | DevFest Cloud Manila 2023 |
 

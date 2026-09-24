@@ -41,8 +41,6 @@ qr_code: "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://
 
 ## Abstract
 
-> _The full abstract: the version submitted to CFPs and shared with event organizers._
-
 <Write a compelling 150–300 word abstract. Cover the problem you're solving, the approach, key takeaways, and who this is for. Highlight relevant Google Cloud technologies and your GDE perspective where appropriate.>
 
 ## Outline
