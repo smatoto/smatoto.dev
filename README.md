@@ -30,18 +30,17 @@ A structured, version-controlled portfolio of public talks and workshops.
 ## Local Development
 
 ```bash
-# Install dependencies
-pip install mkdocs-material
+# Install pinned dependencies
+pip install --require-hashes -r requirements.txt
 
 # Serve locally
 mkdocs serve
 
 # Build static site
 mkdocs build
-
-# Deploy to GitHub Pages
-mkdocs gh-deploy --force
 ```
+
+Deployment runs in GitHub Actions on every push to `main` (`.github/workflows/deploy-portfolio.yml`). Pull requests run the same build as a check, without deploying.
 
 ## License
 
