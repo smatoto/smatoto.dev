@@ -3,14 +3,6 @@
     {
       "issuer": "Google Cloud",
       "issuer_badge_class": "google",
-      "title": "Professional Security Operations Engineer",
-      "issued_month_year": "August 2025",
-      "expires_date": "2027-08-08",
-      "badge_url": "https://www.credly.com/badges/aed43bc7-3679-413a-bfef-d638addc26fc"
-    },
-    {
-      "issuer": "Google Cloud",
-      "issuer_badge_class": "google",
       "title": "Generative AI Leader",
       "issued_month_year": "May 2025",
       "expires_date": "2028-05-28",
@@ -19,10 +11,10 @@
     {
       "issuer": "Google Cloud",
       "issuer_badge_class": "google",
-      "title": "Professional Machine Learning Engineer",
-      "issued_month_year": "November 2024",
-      "expires_date": "2026-11-28",
-      "badge_url": "https://www.credly.com/badges/463fe381-e6e4-4e72-8bae-4f753dfa99d9"
+      "title": "Cloud Digital Leader",
+      "issued_month_year": "June 2021",
+      "expires_date": "2027-05-02",
+      "badge_url": "https://www.credly.com/badges/845f285a-33dc-4d1f-b2dd-827787796735"
     },
     {
       "issuer": "Google Cloud",
@@ -39,6 +31,30 @@
       "issued_month_year": "November 2024",
       "expires_date": "2027-11-11",
       "badge_url": "https://www.credly.com/badges/2265a4c3-dc49-47ab-9aae-2e30681d4161"
+    },
+    {
+      "issuer": "Google Cloud",
+      "issuer_badge_class": "google",
+      "title": "Associate Cloud Engineer",
+      "issued_month_year": "July 2019",
+      "expires_date": "2027-05-09",
+      "badge_url": "https://www.credly.com/badges/45168c5b-d1c8-4281-938a-c00babc64e32"
+    },
+    {
+      "issuer": "Google Cloud",
+      "issuer_badge_class": "google",
+      "title": "Professional Security Operations Engineer",
+      "issued_month_year": "August 2025",
+      "expires_date": "2027-08-08",
+      "badge_url": "https://www.credly.com/badges/aed43bc7-3679-413a-bfef-d638addc26fc"
+    },
+    {
+      "issuer": "Google Cloud",
+      "issuer_badge_class": "google",
+      "title": "Professional Machine Learning Engineer",
+      "issued_month_year": "November 2024",
+      "expires_date": "2026-11-28",
+      "badge_url": "https://www.credly.com/badges/463fe381-e6e4-4e72-8bae-4f753dfa99d9"
     },
     {
       "issuer": "Google Cloud",
@@ -63,14 +79,6 @@
       "issued_month_year": "November 2021",
       "expires_date": "2027-10-17",
       "badge_url": "https://www.credly.com/badges/d94fd5ae-f9cc-4fe1-a51c-121f98e6b6c3"
-    },
-    {
-      "issuer": "Google Cloud",
-      "issuer_badge_class": "google",
-      "title": "Cloud Digital Leader",
-      "issued_month_year": "June 2021",
-      "expires_date": "2027-05-02",
-      "badge_url": "https://www.credly.com/badges/845f285a-33dc-4d1f-b2dd-827787796735"
     },
     {
       "issuer": "Google Cloud",
@@ -101,16 +109,16 @@
       "issuer_badge_class": "google",
       "title": "Professional Cloud Architect",
       "issued_month_year": "November 2019",
-      "expires_date": "2026-11-22",
+      "expires_date": "2028-10-19",
       "badge_url": "https://www.credly.com/badges/771c3b73-ae16-4565-94ba-23a5066ea297"
     },
     {
       "issuer": "Google Cloud",
       "issuer_badge_class": "google",
-      "title": "Associate Cloud Engineer",
-      "issued_month_year": "July 2019",
-      "expires_date": "2027-05-09",
-      "badge_url": "https://www.credly.com/badges/45168c5b-d1c8-4281-938a-c00babc64e32"
+      "title": "Professional Agentic Architect",
+      "issued_month_year": "November 2026",
+      "expires_date": "2027-11-03",
+      "badge_url": "https://www.credly.com/badges/93c04065-af87-4db4-b4ce-8d7986ff621a"
     },
     {
       "issuer": "Amazon Web Services",
