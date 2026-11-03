@@ -7,22 +7,16 @@ A collection of certifications reflecting continuous learning across cloud platf
 ## Google Cloud
 
 <div class="certs-grid">
-  <a href="https://www.credly.com/badges/aed43bc7-3679-413a-bfef-d638addc26fc" class="cert-card" data-expires="2027-08-08" target="_blank" rel="noopener noreferrer">
-    <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
-    <h3>Professional Security Operations Engineer</h3>
-    <span class="cert-date">Issued: August 2025 | Expires: 8 August 2027</span>
-  </a>
-
   <a href="https://www.credly.com/badges/d45c115b-1732-40ef-a100-8f2494b3e72c" class="cert-card" data-expires="2028-05-28" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Generative AI Leader</h3>
     <span class="cert-date">Issued: May 2025 | Expires: 28 May 2028</span>
   </a>
 
-  <a href="https://www.credly.com/badges/463fe381-e6e4-4e72-8bae-4f753dfa99d9" class="cert-card" data-expires="2026-11-28" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/845f285a-33dc-4d1f-b2dd-827787796735" class="cert-card" data-expires="2027-05-02" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
-    <h3>Professional Machine Learning Engineer</h3>
-    <span class="cert-date">Issued: November 2024 | Expires: 28 November 2026</span>
+    <h3>Cloud Digital Leader</h3>
+    <span class="cert-date">Issued: June 2021 | Expires: 2 May 2027</span>
   </a>
 
   <a href="https://www.credly.com/badges/ac53fbe7-fd91-46b4-bb7b-2a0fc1ba8b47" class="cert-card" data-expires="2027-11-18" target="_blank" rel="noopener noreferrer">
@@ -35,6 +29,24 @@ A collection of certifications reflecting continuous learning across cloud platf
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Associate Google Workspace Administrator</h3>
     <span class="cert-date">Issued: November 2024 | Expires: 11 November 2027</span>
+  </a>
+
+  <a href="https://www.credly.com/badges/45168c5b-d1c8-4281-938a-c00babc64e32" class="cert-card" data-expires="2027-05-09" target="_blank" rel="noopener noreferrer">
+    <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
+    <h3>Associate Cloud Engineer</h3>
+    <span class="cert-date">Issued: July 2019 | Expires: 9 May 2027</span>
+  </a>
+
+  <a href="https://www.credly.com/badges/aed43bc7-3679-413a-bfef-d638addc26fc" class="cert-card" data-expires="2027-08-08" target="_blank" rel="noopener noreferrer">
+    <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
+    <h3>Professional Security Operations Engineer</h3>
+    <span class="cert-date">Issued: August 2025 | Expires: 8 August 2027</span>
+  </a>
+
+  <a href="https://www.credly.com/badges/463fe381-e6e4-4e72-8bae-4f753dfa99d9" class="cert-card" data-expires="2026-11-28" target="_blank" rel="noopener noreferrer">
+    <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
+    <h3>Professional Machine Learning Engineer</h3>
+    <span class="cert-date">Issued: November 2024 | Expires: 28 November 2026</span>
   </a>
 
   <a href="https://www.credly.com/badges/e3d27eb0-0c3d-4f85-8162-d7e2d85aa4e6" class="cert-card" data-expires="2028-05-04" target="_blank" rel="noopener noreferrer">
@@ -55,12 +67,6 @@ A collection of certifications reflecting continuous learning across cloud platf
     <span class="cert-date">Issued: November 2021 | Expires: 17 October 2027</span>
   </a>
 
-  <a href="https://www.credly.com/badges/845f285a-33dc-4d1f-b2dd-827787796735" class="cert-card" data-expires="2027-05-02" target="_blank" rel="noopener noreferrer">
-    <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
-    <h3>Cloud Digital Leader</h3>
-    <span class="cert-date">Issued: June 2021 | Expires: 2 May 2027</span>
-  </a>
-
   <a href="https://www.credly.com/badges/b6cd50e3-2a41-41ee-b1dd-d56ec1dc06f2" class="cert-card" data-expires="2028-03-04" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Professional Cloud Developer</h3>
@@ -79,16 +85,16 @@ A collection of certifications reflecting continuous learning across cloud platf
     <span class="cert-date">Issued: January 2020 | Expires: 4 April 2027</span>
   </a>
 
-  <a href="https://www.credly.com/badges/771c3b73-ae16-4565-94ba-23a5066ea297" class="cert-card" data-expires="2026-11-22" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/771c3b73-ae16-4565-94ba-23a5066ea297" class="cert-card" data-expires="2028-10-19" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
     <h3>Professional Cloud Architect</h3>
-    <span class="cert-date">Issued: November 2019 | Expires: 22 November 2026</span>
+    <span class="cert-date">Issued: November 2019 | Expires: 19 October 2028</span>
   </a>
 
-  <a href="https://www.credly.com/badges/45168c5b-d1c8-4281-938a-c00babc64e32" class="cert-card" data-expires="2027-05-09" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.credly.com/badges/93c04065-af87-4db4-b4ce-8d7986ff621a" class="cert-card" data-expires="2027-11-03" target="_blank" rel="noopener noreferrer">
     <span class="issuer-badge issuer-compact google" title="Google Cloud" aria-label="Google Cloud">GCP</span>
-    <h3>Associate Cloud Engineer</h3>
-    <span class="cert-date">Issued: July 2019 | Expires: 9 May 2027</span>
+    <h3>Professional Agentic Architect</h3>
+    <span class="cert-date">Issued: November 2026 | Expires: 3 November 2027</span>
   </a>
 
 </div>
