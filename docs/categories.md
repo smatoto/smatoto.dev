@@ -24,6 +24,7 @@ Browse sessions by category:
 
 | Title | Event |
 | ----- | ----- |
+| [Plan, Build, Ship: A Serverless Pipeline on Google Cloud with Antigravity](./2026/build-and-deploy-with-antigravity.md) | TBA |
 | [From Prompt to PR: Autonomous Coding with Jules](./2025/coding-with-jules.md) | Google I/O Extended Manila 2025 |
 | [Getting Started with the Gemini API in Vertex AI with cURL / REST API](./2025/intro-to-gemini-api.md) | Build with AI Cloud Manila 2025 |
 | [Build AI Agents with ADK and Gemini](./2025/adk-and-gemini.md) | Google I/O Extended Bacolod 2025 |
