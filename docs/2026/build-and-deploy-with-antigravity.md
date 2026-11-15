@@ -4,13 +4,24 @@ title: "Plan, Build, Ship: A Serverless Pipeline on Google Cloud with Antigravit
 summary: "A hands-on workshop where attendees use Google Antigravity to plan, generate, deploy, and verify an event-driven document pipeline on Google Cloud, built on Cloud Storage, Pub/Sub, Cloud Run, and BigQuery, while keeping a human in the loop at every step."
 type: Workshop
 category: AI
-status: Draft
+status: Delivered
 level: Intermediate
 duration: 90
 tags: ["AI - Agents", "AI - Gemini", "Cloud - AI Tools", "Cloud - Serverless & Containers", "Google Cloud", "Developer Tools"]
 
 # Event history for Impact Analytics
-events: []
+events:
+  - name: "DevFest 2026 Buildathon: Cagayan de Oro Stop"
+    organizer: "GDG Cagayan de Oro"
+    date: 2026-11-15
+    location: "Virtual"
+    attendees: 37
+    url:
+      name: "Event Page"
+      link: "https://gdg.community.dev/events/details/google-gdg-cagayan-de-oro-presents-devfest-2026-buildathon-cagayan-de-oro-stop/"
+    slides:
+      name: "Slide Deck"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vSbnMvBfuJEkMX47W55w-ZHkmdYZYQ6AV5PZlTHm7mVSUBcrgnGijvbc7bpfnaYpSQPAdUzMRVAB44v/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
