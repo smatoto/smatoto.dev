@@ -22,6 +22,17 @@ events:
     slides:
       name: "Slide Deck"
       link: "https://docs.google.com/presentation/d/e/2PACX-1vSbnMvBfuJEkMX47W55w-ZHkmdYZYQ6AV5PZlTHm7mVSUBcrgnGijvbc7bpfnaYpSQPAdUzMRVAB44v/pub?start=false&loop=false&delayms=3000"
+  - name: "DevFest Manila 2026 After Hours"
+    organizer: "GDG Manila"
+    date: 2026-11-21
+    location: "Escaler Hall, Ateneo de Manila University, Quezon City, Philippines"
+    attendees: TBD
+    url:
+      name: "Event Page"
+      link: "https://gdg.community.dev/events/details/google-gdg-manila-presents-devfest-manila-2026-after-hours/cohost-gdg-manila/"
+    slides:
+      name: "Slide Deck"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vRTyfIod8NYYXxkEPuLMxv11LKSiWpbVDpqiE4ZQ2xZ6E5AbfoLK4YxsFNfLR-6yb9z-DD9RKRyUvKo/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
