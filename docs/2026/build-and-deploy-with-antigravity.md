@@ -26,7 +26,7 @@ events:
     organizer: "GDG Manila"
     date: 2026-11-21
     location: "Escaler Hall, Ateneo de Manila University, Quezon City, Philippines"
-    attendees: TBD
+    attendees: 75
     url:
       name: "Event Page"
       link: "https://gdg.community.dev/events/details/google-gdg-manila-presents-devfest-manila-2026-after-hours/cohost-gdg-manila/"
