@@ -33,6 +33,17 @@ events:
     slides:
       name: "Slide Deck"
       link: "https://docs.google.com/presentation/d/e/2PACX-1vRTyfIod8NYYXxkEPuLMxv11LKSiWpbVDpqiE4ZQ2xZ6E5AbfoLK4YxsFNfLR-6yb9z-DD9RKRyUvKo/pub?start=false&loop=false&delayms=3000"
+  - name: "DevFest Bacolod 2026: Professional Network Day"
+    organizer: "GDG Bacolod"
+    date: 2026-11-28
+    location: "Bacolod, Philippines"
+    attendees: 0
+    url:
+      name: "Event Page"
+      link: "https://gdg.community.dev/events/details/google-gdg-bacolod-presents-devfest-bacolod-2026-professional-network-day/"
+    slides:
+      name: "Slide Deck"
+      link: "https://docs.google.com/presentation/d/e/2PACX-1vTM6P8ofbbT11ZnOAgXbIVzMuRKAIfNGBzM_hT-fkK4LcpAmsFUEud1YzElHzR5Z1xvAHwhTkJFex6z/pub?start=false&loop=false&delayms=3000"
 
 # Links for the Portfolio Site
 resources:
